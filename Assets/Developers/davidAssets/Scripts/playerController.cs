@@ -8,12 +8,18 @@ public class playerController : MonoBehaviour
     public Rigidbody rb;
     [SerializeField] private int horizontalMovementSpeed = 0;
     [SerializeField] private int verticalMovementSpeed = 0;
-
+    //Gun variables
+    [SerializeField] Transform bulletSpawnPoint;
+    [SerializeField] GameObject Bullet;
+    [SerializeField] private float bulletTimer = 0.0f;
+    //Health variables
+    public int playerHealth = 3;
     void Start()
     {
         //Fetch rigidbody
         rb = GetComponent<Rigidbody>();
         
+
     }
 
     
@@ -41,5 +47,20 @@ public class playerController : MonoBehaviour
         {
             rb.AddRelativeForce(Vector3.down * verticalMovementSpeed);
         }
+
+
+        //Gun logic
+        bulletTimer -= Time.deltaTime;
+        if (Input.GetKey(KeyCode.Space) == true && bulletTimer < -0.2f)
+        {
+            Instantiate(Bullet, bulletSpawnPoint.position, Quaternion.Euler(90, 0, 90));
+            bulletTimer = 0.0f;
+        }
+    }
+
+    //Health logic
+    void OnCollisionEnter(Collision collision)
+    {
+        Debug.Log("Collide");
     }
 }
