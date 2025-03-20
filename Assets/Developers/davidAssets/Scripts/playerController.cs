@@ -12,6 +12,8 @@ public class playerController : MonoBehaviour
     [SerializeField] Transform bulletSpawnPoint;
     [SerializeField] GameObject Bullet;
     [SerializeField] private float bulletTimer = 0.0f;
+    //Health variables
+    public int playerHealth = 3;
     void Start()
     {
         //Fetch rigidbody
@@ -54,5 +56,11 @@ public class playerController : MonoBehaviour
             Instantiate(Bullet, bulletSpawnPoint.position, Quaternion.Euler(90, 0, 90));
             bulletTimer = 0.0f;
         }
+    }
+
+    //Health logic
+    void OnCollisionEnter(Collision collision)
+    {
+        Debug.Log("Collide");
     }
 }
