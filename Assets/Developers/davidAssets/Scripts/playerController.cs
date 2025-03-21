@@ -8,6 +8,8 @@ public class playerController : MonoBehaviour
     public Rigidbody rb;
     [SerializeField] private int horizontalMovementSpeed = 0;
     [SerializeField] private int verticalMovementSpeed = 0;
+    private float maximumVelocity = 7;
+    private float sinkSpeed = 5;
     //Gun variables
     [SerializeField] Transform bulletSpawnPoint;
     [SerializeField] GameObject Bullet;
@@ -29,24 +31,32 @@ public class playerController : MonoBehaviour
     {
         //Movement logic
 
+        rb.AddRelativeForce(Vector3.down * sinkSpeed);
+
         //Left
         if (Input.GetKey(KeyCode.A) == true)
         {
+            if (rb.linearVelocity.x > -maximumVelocity)
             rb.AddRelativeForce(Vector3.left * horizontalMovementSpeed);
         }
+
+
         //Right
         if (Input.GetKey(KeyCode.D) == true)
         {
+            if (rb.linearVelocity.x < maximumVelocity)
             rb.AddRelativeForce(Vector3.right * horizontalMovementSpeed);
         }
         //Up
         if (Input.GetKey(KeyCode.W) == true)
         {
+            if (rb.linearVelocity.y < maximumVelocity)
             rb.AddRelativeForce(Vector3.up * verticalMovementSpeed);
         }
         //Down
         if (Input.GetKey(KeyCode.S) == true)
         {
+            if (rb.linearVelocity.y > -maximumVelocity)
             rb.AddRelativeForce(Vector3.down * verticalMovementSpeed);
         }
 
