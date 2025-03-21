@@ -1,4 +1,5 @@
 using System.Runtime.CompilerServices;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class LightEnemyMech : MonoBehaviour
@@ -17,6 +18,8 @@ public class LightEnemyMech : MonoBehaviour
     [SerializeField] private Transform ReturnPoint;
 
     private int ReturnTrigger = 0;
+
+    private int LightEnemyLives = 3;
     
 
     void Start()
@@ -69,14 +72,17 @@ public class LightEnemyMech : MonoBehaviour
         }
         if (AttackCoolDown < 0)
         {
-            AttackCoolDown = -0.1f;
-            transform.position = new Vector3(transform.position.x - Time.deltaTime * 20, Mathf.Lerp(transform.position.y, Player.transform.position.y, Time.deltaTime * 3), transform.position.z);
-
+            if(ReturnTrigger == 0)
+            {
+                AttackCoolDown = -0.1f;
+                transform.position = new Vector3(transform.position.x - Time.deltaTime * 20, Mathf.Lerp(transform.position.y, Player.transform.position.y, Time.deltaTime * 3), transform.position.z);
+            }
         }
 
         if(ReturnTrigger == 1)
         {
-            transform.position = new Vector3(Mathf.Lerp(transform.position.x, ReturnPoint.transform.position.x, Time.deltaTime * 3), Mathf.Lerp(transform.position.y, ReturnPoint.transform.position.y, Time.deltaTime * 3), transform.position.z);
+            transform.position = new Vector3(Mathf.Lerp(transform.position.x, ReturnPoint.transform.position.x, Time.deltaTime * 2), Mathf.Lerp(transform.position.y, ReturnPoint.transform.position.y, Time.deltaTime * 2), transform.position.z);
+            
         }
     }
 
@@ -88,7 +94,18 @@ public class LightEnemyMech : MonoBehaviour
         {
             ReturnTrigger = 1;
         }
-        
+
+        if (other.tag == "ResetEnemy")
+        {
+           AttackCoolDown = 5f;
+            ReturnTrigger = 0;
+        }
+
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+            
     }
 }
 

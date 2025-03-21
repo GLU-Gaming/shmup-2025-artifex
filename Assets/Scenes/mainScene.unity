@@ -754,7 +754,7 @@ Transform:
   m_GameObject: {fileID: 1596649618}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -40.25, y: 0, z: 0}
+  m_LocalPosition: {x: -42.97, y: 0, z: 0}
   m_LocalScale: {x: 12.47649, y: 49.48746, z: 6.8832}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -928,9 +928,10 @@ GameObject:
   m_Component:
   - component: {fileID: 2042380113}
   - component: {fileID: 2042380114}
+  - component: {fileID: 2042380115}
   m_Layer: 0
   m_Name: ReturnPoint.LightEnemy
-  m_TagString: Untagged
+  m_TagString: ResetEnemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -963,6 +964,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   LightEnemy: {fileID: 556814524}
+--- !u!65 &2042380115
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2042380112}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 0.62407625, z: 1}
+  m_Center: {x: 0, y: 0.0015123487, z: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

@@ -19,4 +19,6 @@ public class LightEnemyReturn : MonoBehaviour
             transform.position = new Vector3(LightEnemy.transform.position.x, LightEnemy.transform.position.y, LightEnemy.transform.position.z);
         }
     }
+
+    
 }
