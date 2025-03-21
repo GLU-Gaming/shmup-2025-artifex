@@ -12,15 +12,14 @@ public class LightEnemyMech : MonoBehaviour
 
     [SerializeField] private float AttackCoolDown = 5f;
 
-    public float minimum = -1.0F;
-    public float maximum = 1.0F;
+    
 
 
     static float t = 0.0f;
 
     void Start()
     {
-        
+            
     }
 
     
@@ -69,19 +68,11 @@ public class LightEnemyMech : MonoBehaviour
         if(AttackCoolDown < 0)
         {
             AttackCoolDown = -0.1f;
-            transform.position = new Vector3(transform.position.x - Time.deltaTime, Mathf.Lerp(Player.position.y, maximum, t), transform.position.z);
-
-            t += 0.5f * Time.deltaTime;
-
-            if (t > 1f)
-            {
-                float temp = maximum;
-                maximum = minimum;
-                minimum = temp;
-                t = 0.0f;
-            }
+            transform.position = new Vector3(transform.position.x - Time.deltaTime * 20, Mathf.Lerp(transform.position.y, Player.transform.position.y, Time.deltaTime * 3), transform.position.z);
 
         }
+
+
        
 
     }
