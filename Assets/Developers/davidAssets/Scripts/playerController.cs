@@ -14,6 +14,8 @@ public class playerController : MonoBehaviour
     [SerializeField] private float bulletTimer = 0.0f;
     //Health variables
     public int playerHealth = 3;
+    //Sparks effect
+    [SerializeField] public ParticleSystem Sparks;
     void Start()
     {
         //Fetch rigidbody
@@ -61,6 +63,7 @@ public class playerController : MonoBehaviour
     //Health logic
     void OnCollisionEnter(Collision collision)
     {
-        Debug.Log("Collide");
+        playerHealth = playerHealth - 1;
+        Instantiate(Sparks, gameObject.transform.position, Quaternion.Euler(0, 0, 0));
     }
 }

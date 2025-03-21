@@ -20,7 +20,7 @@ public class bulletScript : MonoBehaviour
     private void OnCollisionEnter(Collision collision)
     {
 
-       Instantiate(bulletCollision, transform.position, Quaternion.Euler(-90, 0, 0));
+       Instantiate(bulletCollision, transform.position, Quaternion.Euler(0, 0, 0));
        Destroy(gameObject);
     }
 }
