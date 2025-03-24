@@ -75,6 +75,7 @@ public class playerController : MonoBehaviour
             Debug.Log("test");
             playerHealth = playerHealth - 1;
             Instantiate(Sparks, gameObject.transform.position, Quaternion.Euler(0, 0, 0));
+            
         }
     }
 }
