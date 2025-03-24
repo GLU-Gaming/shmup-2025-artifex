@@ -17,6 +17,7 @@ public class LightEnemyMech : MonoBehaviour
 
     [SerializeField] private Transform ReturnPoint;
 
+    [SerializeField] private GameObject ReturnPoints;
     private int ReturnTrigger = 0;
 
     private int LightEnemyLives = 3;
@@ -85,9 +86,10 @@ public class LightEnemyMech : MonoBehaviour
             
         }
 
-        if(LightEnemyLives == 0)
+        if(LightEnemyLives <= 0)
         {
             Destroy(gameObject);
+            Destroy(ReturnPoints);
         }
     }
 
@@ -110,6 +112,16 @@ public class LightEnemyMech : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        LightEnemyLives -= 1;
+        if(collision.gameObject.tag == "Bullet")
+        {
+            LightEnemyLives -= 1;
+        }
+
+        if(collision.gameObject.tag == "OnderZeeer")
+        {
+            LightEnemyLives -= 3;
+        }
+        
+        
     }
 }
