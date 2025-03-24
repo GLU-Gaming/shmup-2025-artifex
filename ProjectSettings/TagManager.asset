@@ -6,13 +6,11 @@ TagManager:
   tags:
   - RespawnPoint
   - ResetEnemy
-  - ScreenWrapper
-  - Enemy
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - ScreenWrapper
+  - 
   - Water
   - UI
   - Enemy

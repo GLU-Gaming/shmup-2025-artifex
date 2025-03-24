@@ -81,13 +81,8 @@ public class LightEnemyMech : MonoBehaviour
 
         if(ReturnTrigger == 1)
         {
-            transform.position = new Vector3(Mathf.Lerp(transform.position.x, ReturnPoint.transform.position.x, Time.deltaTime * 1), Mathf.Lerp(transform.position.y, ReturnPoint.transform.position.y, Time.deltaTime * 1), transform.position.z);
+            transform.position = new Vector3(Mathf.Lerp(transform.position.x, ReturnPoint.transform.position.x, Time.deltaTime * 2), Mathf.Lerp(transform.position.y, ReturnPoint.transform.position.y, Time.deltaTime * 2), transform.position.z);
             
-        }
-
-        if(LightEnemyLives == 0)
-        {
-            Destroy(gameObject);
         }
     }
 
@@ -110,6 +105,8 @@ public class LightEnemyMech : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        LightEnemyLives -= 1;
+            
     }
 }
+
+
