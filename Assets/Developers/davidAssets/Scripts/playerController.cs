@@ -70,7 +70,11 @@ public class playerController : MonoBehaviour
     //Health logic
     void OnCollisionEnter(Collision collision)
     {
-        playerHealth = playerHealth - 1;
-        Instantiate(Sparks, gameObject.transform.position, Quaternion.Euler(0, 0, 0));
+        if(collision.gameObject.tag == "Enemy")
+        {
+            Debug.Log("test");
+            playerHealth = playerHealth - 1;
+            Instantiate(Sparks, gameObject.transform.position, Quaternion.Euler(0, 0, 0));
+        }
     }
 }
