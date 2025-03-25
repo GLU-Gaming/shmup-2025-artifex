@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class LightEnemyMech : MonoBehaviour
 {
-    [SerializeField] private Transform Player;
+    private Transform Player;
 
     bool TargetDownOrUp = true;
 
@@ -15,9 +15,9 @@ public class LightEnemyMech : MonoBehaviour
     [SerializeField] public float AttackCoolDown = 5f;
 
 
-    [SerializeField] private Transform ReturnPoint;
+    private Transform ReturnPoint;
 
-    [SerializeField] private GameObject ReturnPoints;
+    private GameObject ReturnPoints;
     private int ReturnTrigger = 0;
 
     private int LightEnemyLives = 3;
@@ -25,7 +25,9 @@ public class LightEnemyMech : MonoBehaviour
 
     void Start()
     {
-            
+        Player = FindFirstObjectByType<playerController>().transform;
+        ReturnPoint = FindFirstObjectByType<LightEnemyReturn>().transform;
+        ReturnPoints = FindFirstObjectByType<LightEnemyReturn>().gameObject;
     }
 
 

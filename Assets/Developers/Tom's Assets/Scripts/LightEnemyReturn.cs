@@ -2,13 +2,14 @@ using UnityEngine;
 
 public class LightEnemyReturn : MonoBehaviour
 {
-    [SerializeField] private Transform LightEnemy;
+    private Transform LightEnemy;
 
 
     private LightEnemyMech LightEnemymech;
     void Start()
     {
         LightEnemymech = FindFirstObjectByType<LightEnemyMech>();
+        LightEnemy = FindFirstObjectByType<LightEnemyMech>().transform;
     }
 
     
