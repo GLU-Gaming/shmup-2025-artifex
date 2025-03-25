@@ -8,6 +8,8 @@ TagManager:
   - ResetEnemy
   - ScreenWrapper
   - Enemy
+  - Bullet
+  - OnderZeeer
   layers:
   - Default
   - TransparentFX
