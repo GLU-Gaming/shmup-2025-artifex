@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -15,9 +16,14 @@ public class GameManager : MonoBehaviour
         //Game over
         if (player.playerHealth <= 0)
         {
-            Instantiate(Sparks, playerPosition.transform.position, Quaternion.Euler(0, 0, 0));
-            Debug.Log("Death");
-            //Endscreen
+            PlayerDeath();
         }
+    }
+
+    public void PlayerDeath()
+    {
+        //Explosion
+        Debug.Log("Death");
+        SceneManager.LoadScene("endScene");
     }
 }
