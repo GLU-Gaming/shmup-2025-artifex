@@ -8,8 +8,8 @@ public class LightEnemyReturn : MonoBehaviour
     private LightEnemyMech LightEnemymech;
     void Start()
     {
-        LightEnemymech = FindFirstObjectByType<LightEnemyMech>();
-        LightEnemy = FindFirstObjectByType<LightEnemyMech>().transform;
+        LightEnemymech = GetComponentInParent<LightEnemyMech>();
+        LightEnemy = LightEnemymech.transform;
     }
 
     

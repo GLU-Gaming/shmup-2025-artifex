@@ -2,6 +2,15 @@ using System.Runtime.CompilerServices;
 using Unity.VisualScripting;
 using UnityEngine;
 
+
+enum LightEnemyState
+{
+    Idle,
+    Attack, 
+    Reset
+}
+
+
 public class LightEnemyMech : MonoBehaviour
 {
     private Transform Player;
@@ -14,20 +23,28 @@ public class LightEnemyMech : MonoBehaviour
 
     [SerializeField] public float AttackCoolDown = 5f;
 
+    private LightEnemyState State;
 
     private Transform ReturnPoint;
 
     private GameObject ReturnPoints;
+
+    //vector3 variabele van de returnPosition;
     private int ReturnTrigger = 0;
 
     private int LightEnemyLives = 3;
+
+    private Vector3 PositionReturn;
     
 
     void Start()
     {
         Player = FindFirstObjectByType<playerController>().transform;
-        ReturnPoint = FindFirstObjectByType<LightEnemyReturn>().transform;
-        ReturnPoints = FindFirstObjectByType<LightEnemyReturn>().gameObject;
+        ReturnPoint = GetComponentInChildren<LightEnemyReturn>().transform;
+        ReturnPoints = GetComponentInChildren<LightEnemyReturn>().gameObject;
+
+        State = LightEnemyState.Idle;
+        
     }
 
 
@@ -77,6 +94,14 @@ public class LightEnemyMech : MonoBehaviour
         {
             if(ReturnTrigger == 0)
             {
+                if(State == LightEnemyState.Idle)
+                {
+                    //returnPosition vullen met z'n 
+                    PositionReturn = transform.position;
+                    State = LightEnemyState.Attack;
+                }
+                
+
                 AttackCoolDown = -0.1f;
                 transform.position = new Vector3(transform.position.x - Time.deltaTime * 20, Mathf.Lerp(transform.position.y, Player.transform.position.y, Time.deltaTime * 3), transform.position.z);
             }
@@ -84,8 +109,18 @@ public class LightEnemyMech : MonoBehaviour
 
         if(ReturnTrigger == 1)
         {
-            transform.position = new Vector3(Mathf.Lerp(transform.position.x, ReturnPoint.transform.position.x, Time.deltaTime * 1), Mathf.Lerp(transform.position.y, ReturnPoint.transform.position.y, Time.deltaTime * 1), transform.position.z);
+            State = LightEnemyState.Reset;
+
+            //transform.position = new Vector3(Mathf.Lerp(transform.position.x, ReturnPoint.transform.position.x, Time.deltaTime * 1), Mathf.Lerp(transform.position.y, ReturnPoint.transform.position.y, Time.deltaTime * 1), transform.position.z);
+            transform.position = Vector3.Lerp(transform.position, PositionReturn, Time.deltaTime * 2);
             
+
+            if (Vector3.Distance(PositionReturn, transform.position) < 0.1f)
+            {
+                ReturnTrigger = 0;
+                AttackCoolDown = 5f;
+                State = LightEnemyState.Idle;
+            }
         }
 
         if(LightEnemyLives <= 0)
@@ -93,6 +128,8 @@ public class LightEnemyMech : MonoBehaviour
             Destroy(gameObject);
             Destroy(ReturnPoints);
         }
+
+
     }
 
 
@@ -102,12 +139,6 @@ public class LightEnemyMech : MonoBehaviour
         if(other.tag == "RespawnPoint")
         {
             ReturnTrigger = 1;
-        }
-
-        if (other.tag == "ResetEnemy")
-        {
-           AttackCoolDown = 5f;
-            ReturnTrigger = 0;
         }
 
     }
