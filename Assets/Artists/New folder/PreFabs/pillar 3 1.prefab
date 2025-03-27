@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1001 &6871608919501657989
+--- !u!1001 &8131971317767829998
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -9,16 +9,28 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: b2d4d7361739963418aa8da01807e18a, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1190.904
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: b2d4d7361739963418aa8da01807e18a, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1190.9039
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: b2d4d7361739963418aa8da01807e18a, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1190.9039
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: b2d4d7361739963418aa8da01807e18a, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -15.727711
+      value: 52.944
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: b2d4d7361739963418aa8da01807e18a, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.73
+      value: 15.46499
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: b2d4d7361739963418aa8da01807e18a, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 6.28
+      value: 20.87833
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: b2d4d7361739963418aa8da01807e18a, type: 3}
       propertyPath: m_LocalRotation.w
@@ -30,7 +42,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: b2d4d7361739963418aa8da01807e18a, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: b2d4d7361739963418aa8da01807e18a, type: 3}
       propertyPath: m_LocalRotation.z
@@ -54,7 +66,7 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: be9c13802a13a2b439d7479a9ab5a88e, type: 2}
     - target: {fileID: 919132149155446097, guid: b2d4d7361739963418aa8da01807e18a, type: 3}
       propertyPath: m_Name
-      value: pillar 3
+      value: pillar 3 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
