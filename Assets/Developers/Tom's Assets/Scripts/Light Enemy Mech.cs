@@ -27,12 +27,12 @@ public class LightEnemyMech : MonoBehaviour
 
     private Transform ReturnPoint;
 
-    private GameObject ReturnPoints;
+    public GameObject ReturnPoints;
 
     //vector3 variabele van de returnPosition;
     private int ReturnTrigger = 0;
 
-    private int LightEnemyLives = 3;
+    public int LightEnemyLives = 3;
 
     private Vector3 PositionReturn;
     
