@@ -104,6 +104,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TargetspeedIncreaseY: 0
   AttackCoolDown: 5
+  ReturnPoints: {fileID: 0}
+  LightEnemyLives: 3
 --- !u!135 &2743146551655112829
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -163,7 +165,7 @@ GameObject:
   - component: {fileID: 2699620805680791799}
   - component: {fileID: 298999976223261846}
   - component: {fileID: 3592575242325766098}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: LightEnemyReturn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
