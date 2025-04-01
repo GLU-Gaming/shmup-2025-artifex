@@ -16,12 +16,22 @@ public class HeavyMovement : MonoBehaviour
 
     [SerializeField] private float HeavyspeedIncreaseY;
 
+    private HeavyBulletSpawn heavyBulletSpawn;
+
+    private Transform HeavyBulletspawn;
+
     private float HeavyspeedY;
+
+    [SerializeField] GameObject HeavyBullet;
+
+    private float HeavyBulletReload = 0;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         forceField = GetComponentInChildren<ForceField>();
+        heavyBulletSpawn =  GetComponentInChildren<HeavyBulletSpawn>();
+        HeavyBulletspawn = heavyBulletSpawn.transform;
         
     }
 
@@ -32,7 +42,11 @@ public class HeavyMovement : MonoBehaviour
 
         if (forceField.ForceFieldLives < 0)
         {
-
+            HeavyBulletReload += Time.deltaTime;
+            if(HeavyBulletReload >= 1)
+            {
+                Instantiate(HeavyBullet, HeavyBullet.transform.position, Quaternion.identity);
+            }
             RegenerateTime -= Time.deltaTime;
 
             if (RegenerateTime <= 0)
