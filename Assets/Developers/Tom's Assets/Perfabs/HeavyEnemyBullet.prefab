@@ -12,10 +12,11 @@ GameObject:
   - component: {fileID: 5968990608576239358}
   - component: {fileID: 5346207938715271905}
   - component: {fileID: 1738886774215344658}
-  - component: {fileID: -1302701697623356435}
-  m_Layer: 0
+  - component: {fileID: 7741432668503897182}
+  - component: {fileID: 1586834413021912727}
+  m_Layer: 3
   m_Name: HeavyEnemyBullet
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -30,7 +31,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 14.29, y: 2.642299, z: 0}
-  m_LocalScale: {x: 0.54038, y: 0.54038, z: 0.54038}
+  m_LocalScale: {x: 1.1085155, y: 1.113561, z: 0.8340127}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -109,7 +110,34 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &-1302701697623356435
+--- !u!54 &7741432668503897182
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8745797883000422955}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!114 &1586834413021912727
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -118,8 +146,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 8745797883000422955}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 95bdaeaf013fa864383792b2bf68346f, type: 3}
+  m_Script: {fileID: 11500000, guid: 26819f7260df98241ac2a47c59f6bc90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  forwardThrust: 2000
+  forwardThrust: -1000
   bulletCollision: {fileID: 4312010197995711018, guid: 52c7d504a0604b241a95640111282cee, type: 3}
