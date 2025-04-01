@@ -30,8 +30,7 @@ public class HeavyMovement : MonoBehaviour
     void Start()
     {
         forceField = GetComponentInChildren<ForceField>();
-        heavyBulletSpawn =  GetComponentInChildren<HeavyBulletSpawn>();
-        HeavyBulletspawn = heavyBulletSpawn.transform;
+        
         
     }
 
@@ -43,9 +42,10 @@ public class HeavyMovement : MonoBehaviour
         if (forceField.ForceFieldLives < 0)
         {
             HeavyBulletReload += Time.deltaTime;
-            if(HeavyBulletReload >= 1)
+            if(HeavyBulletReload >= 2)
             {
-                Instantiate(HeavyBullet, HeavyBullet.transform.position, Quaternion.identity);
+                Instantiate(HeavyBullet, gameObject.transform.position, Quaternion.identity);
+                HeavyBulletReload = 0;
             }
             RegenerateTime -= Time.deltaTime;
 
