@@ -1,6 +1,10 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+<<<<<<<< Updated upstream:Assets/Developers/Tom's Assets/Prefabs/block out speed enemy 1.prefab
 --- !u!1 &1297993613248625565
+========
+--- !u!1 &8897136428410875653
+>>>>>>>> Stashed changes:Assets/Developers/Tom's Assets/Prefabs/block out speed enemy.prefab
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,9 +12,15 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
+<<<<<<<< Updated upstream:Assets/Developers/Tom's Assets/Prefabs/block out speed enemy 1.prefab
   - component: {fileID: 8417033834366393959}
   - component: {fileID: 5071757052276064104}
   - component: {fileID: 7008646782397178932}
+========
+  - component: {fileID: 7205294274962584613}
+  - component: {fileID: 9032871819400567718}
+  - component: {fileID: 5812206008312930685}
+>>>>>>>> Stashed changes:Assets/Developers/Tom's Assets/Prefabs/block out speed enemy.prefab
   m_Layer: 3
   m_Name: LightEnemyReturn
   m_TagString: Untagged
@@ -18,28 +28,46 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+<<<<<<<< Updated upstream:Assets/Developers/Tom's Assets/Prefabs/block out speed enemy 1.prefab
 --- !u!4 &8417033834366393959
+========
+--- !u!4 &7205294274962584613
+>>>>>>>> Stashed changes:Assets/Developers/Tom's Assets/Prefabs/block out speed enemy.prefab
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+<<<<<<<< Updated upstream:Assets/Developers/Tom's Assets/Prefabs/block out speed enemy 1.prefab
   m_GameObject: {fileID: 1297993613248625565}
+========
+  m_GameObject: {fileID: 8897136428410875653}
+>>>>>>>> Stashed changes:Assets/Developers/Tom's Assets/Prefabs/block out speed enemy.prefab
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.01, y: -0.07, z: 0}
+  m_LocalPosition: {x: 0.01, y: -0.03, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
+<<<<<<<< Updated upstream:Assets/Developers/Tom's Assets/Prefabs/block out speed enemy 1.prefab
   m_Father: {fileID: 3012029837530976612}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &5071757052276064104
+========
+  m_Father: {fileID: 6142690671822887699}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &9032871819400567718
+>>>>>>>> Stashed changes:Assets/Developers/Tom's Assets/Prefabs/block out speed enemy.prefab
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+<<<<<<<< Updated upstream:Assets/Developers/Tom's Assets/Prefabs/block out speed enemy 1.prefab
   m_GameObject: {fileID: 1297993613248625565}
+========
+  m_GameObject: {fileID: 8897136428410875653}
+>>>>>>>> Stashed changes:Assets/Developers/Tom's Assets/Prefabs/block out speed enemy.prefab
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -54,19 +82,31 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+<<<<<<<< Updated upstream:Assets/Developers/Tom's Assets/Prefabs/block out speed enemy 1.prefab
 --- !u!114 &7008646782397178932
+========
+--- !u!114 &5812206008312930685
+>>>>>>>> Stashed changes:Assets/Developers/Tom's Assets/Prefabs/block out speed enemy.prefab
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+<<<<<<<< Updated upstream:Assets/Developers/Tom's Assets/Prefabs/block out speed enemy 1.prefab
   m_GameObject: {fileID: 1297993613248625565}
+========
+  m_GameObject: {fileID: 8897136428410875653}
+>>>>>>>> Stashed changes:Assets/Developers/Tom's Assets/Prefabs/block out speed enemy.prefab
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7490ff3bc72f53d459c016bcaabbc626, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+<<<<<<<< Updated upstream:Assets/Developers/Tom's Assets/Prefabs/block out speed enemy 1.prefab
 --- !u!1001 &3334449677827585679
+========
+--- !u!1001 &5959812496497229048
+>>>>>>>> Stashed changes:Assets/Developers/Tom's Assets/Prefabs/block out speed enemy.prefab
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -76,11 +116,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: be1a99bfcdb2c674d854938e0daf5310, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 11.179775
+      value: 12.211446
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: be1a99bfcdb2c674d854938e0daf5310, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.3795727
+      value: 6.858952
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: be1a99bfcdb2c674d854938e0daf5310, type: 3}
       propertyPath: m_LocalPosition.z
@@ -151,6 +191,7 @@ PrefabInstance:
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: be1a99bfcdb2c674d854938e0daf5310, type: 3}
       insertIndex: -1
+<<<<<<<< Updated upstream:Assets/Developers/Tom's Assets/Prefabs/block out speed enemy 1.prefab
       addedObject: {fileID: 8417033834366393959}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: be1a99bfcdb2c674d854938e0daf5310, type: 3}
@@ -169,12 +210,38 @@ GameObject:
   m_PrefabInstance: {fileID: 3334449677827585679}
   m_PrefabAsset: {fileID: 0}
 --- !u!114 &106495257635556308
+========
+      addedObject: {fileID: 7205294274962584613}
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: be1a99bfcdb2c674d854938e0daf5310, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 3754372323526210551}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: be1a99bfcdb2c674d854938e0daf5310, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 9081150435169576544}
+  m_SourcePrefab: {fileID: 100100000, guid: be1a99bfcdb2c674d854938e0daf5310, type: 3}
+--- !u!4 &6142690671822887699 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: be1a99bfcdb2c674d854938e0daf5310, type: 3}
+  m_PrefabInstance: {fileID: 5959812496497229048}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &6806320240350953897 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: be1a99bfcdb2c674d854938e0daf5310, type: 3}
+  m_PrefabInstance: {fileID: 5959812496497229048}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &3754372323526210551
+>>>>>>>> Stashed changes:Assets/Developers/Tom's Assets/Prefabs/block out speed enemy.prefab
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+<<<<<<<< Updated upstream:Assets/Developers/Tom's Assets/Prefabs/block out speed enemy 1.prefab
   m_GameObject: {fileID: 2488011750815370206}
+========
+  m_GameObject: {fileID: 6806320240350953897}
+>>>>>>>> Stashed changes:Assets/Developers/Tom's Assets/Prefabs/block out speed enemy.prefab
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7991863af9aa0484daef29ad77246120, type: 3}
@@ -184,13 +251,21 @@ MonoBehaviour:
   AttackCoolDown: 5
   ReturnPoints: {fileID: 0}
   LightEnemyLives: 3
+<<<<<<<< Updated upstream:Assets/Developers/Tom's Assets/Prefabs/block out speed enemy 1.prefab
 --- !u!135 &4410218262688652413
+========
+--- !u!135 &9081150435169576544
+>>>>>>>> Stashed changes:Assets/Developers/Tom's Assets/Prefabs/block out speed enemy.prefab
 SphereCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+<<<<<<<< Updated upstream:Assets/Developers/Tom's Assets/Prefabs/block out speed enemy 1.prefab
   m_GameObject: {fileID: 2488011750815370206}
+========
+  m_GameObject: {fileID: 6806320240350953897}
+>>>>>>>> Stashed changes:Assets/Developers/Tom's Assets/Prefabs/block out speed enemy.prefab
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -203,6 +278,7 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
+<<<<<<<< Updated upstream:Assets/Developers/Tom's Assets/Prefabs/block out speed enemy 1.prefab
   m_Radius: 0.9270827
   m_Center: {x: 0.020097852, y: -0.025122464, z: 0}
 --- !u!54 &1337666043904171648
@@ -237,3 +313,7 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: be1a99bfcdb2c674d854938e0daf5310, type: 3}
   m_PrefabInstance: {fileID: 3334449677827585679}
   m_PrefabAsset: {fileID: 0}
+========
+  m_Radius: 0.91752434
+  m_Center: {x: -0.0039024353, y: -0.00000047683716, z: 0}
+>>>>>>>> Stashed changes:Assets/Developers/Tom's Assets/Prefabs/block out speed enemy.prefab

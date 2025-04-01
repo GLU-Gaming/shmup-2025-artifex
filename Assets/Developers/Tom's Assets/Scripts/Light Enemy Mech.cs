@@ -154,6 +154,11 @@ public class LightEnemyMech : MonoBehaviour
         {
             LightEnemyLives -= 3;
         }
+
+        if(collision.gameObject.tag == "EnemyWrapper")
+        {
+            LightEnemyLives -= 3;
+        }
         
         
     }

@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 334547781775339405}
   - component: {fileID: 2743146551655112829}
   - component: {fileID: 7084886381151365152}
-  m_Layer: 6
+  m_Layer: 3
   m_Name: LightEnemy (4) 1
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -30,7 +30,7 @@ Transform:
   m_GameObject: {fileID: 6090100989537983664}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -3.6596265, y: 1.6028264, z: 0}
+  m_LocalPosition: {x: 9.5, y: 6.2633862, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -165,7 +165,7 @@ GameObject:
   - component: {fileID: 2699620805680791799}
   - component: {fileID: 298999976223261846}
   - component: {fileID: 3592575242325766098}
-  m_Layer: 6
+  m_Layer: 3
   m_Name: LightEnemyReturn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
