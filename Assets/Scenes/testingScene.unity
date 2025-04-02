@@ -814,9 +814,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 808412201581423368, guid: f5b46216e1265574c8bd3284c6bc085c, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 7558973935913699018, guid: f5b46216e1265574c8bd3284c6bc085c, type: 3}
       propertyPath: m_Name
       value: playerSubmarine 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7558973935913699018, guid: f5b46216e1265574c8bd3284c6bc085c, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 7994398284542372561, guid: f5b46216e1265574c8bd3284c6bc085c, type: 3}
       propertyPath: m_LocalPosition.x
