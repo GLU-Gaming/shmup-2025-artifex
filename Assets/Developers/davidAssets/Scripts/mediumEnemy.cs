@@ -12,6 +12,13 @@ public class mediumEnemy : MonoBehaviour
         rb = GetComponent<Rigidbody>();
     }
 
+    enum EnemyBehavior
+    {
+        Idle,
+        Charging,
+        LockedOn,
+        Shooting,
+    }
     void Update()
     {
         if (enemyHealth <= 0)

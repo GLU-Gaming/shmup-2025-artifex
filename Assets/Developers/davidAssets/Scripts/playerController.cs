@@ -72,10 +72,20 @@ public class playerController : MonoBehaviour
     {
         if(collision.gameObject.tag == "Enemy")
         {
-            Debug.Log("test");
-            playerHealth = playerHealth - 1;
-            Instantiate(Sparks, gameObject.transform.position, Quaternion.Euler(0, 0, 0));
-            
+            PlayerHit();
         }
+    }
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.tag == "Enemy")
+        {
+            PlayerHit();
+        }
+    }
+
+    public void PlayerHit()
+    {
+        playerHealth = playerHealth - 1;
+        Instantiate(Sparks, gameObject.transform.position, Quaternion.Euler(0, 0, 0));
     }
 }
