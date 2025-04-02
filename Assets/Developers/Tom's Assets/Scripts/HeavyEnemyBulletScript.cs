@@ -5,6 +5,8 @@ public class HeavyEnemyBulletScript : MonoBehaviour
     [SerializeField] private int forwardThrust = 0;
     Rigidbody rb;
     [SerializeField] ParticleSystem bulletCollision;
+
+    private int EnemyBullet = 2;
     void Start()
     {
         rb = GetComponent<Rigidbody>();
@@ -14,13 +16,15 @@ public class HeavyEnemyBulletScript : MonoBehaviour
 
     void Update()
     {
-
+        if (EnemyBullet == 0)
+        {
+            Destroy(gameObject);
+        }
     }
 
     private void OnCollisionEnter(Collision collision)
     {
 
-        Instantiate(bulletCollision, transform.position, Quaternion.Euler(0, 0, 0));
-        Destroy(gameObject);
+        EnemyBullet -= 1;
     }
 }
