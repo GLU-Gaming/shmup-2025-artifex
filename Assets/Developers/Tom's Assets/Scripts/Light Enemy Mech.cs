@@ -141,6 +141,11 @@ public class LightEnemyMech : MonoBehaviour
             ReturnTrigger = 1;
         }
 
+        if (other.gameObject.tag == "EnemyWrapper")
+        {
+            Destroy(gameObject);
+        }
+
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -155,10 +160,7 @@ public class LightEnemyMech : MonoBehaviour
             LightEnemyLives -= 3;
         }
 
-        if(collision.gameObject.tag == "EnemyWrapper")
-        {
-            LightEnemyLives -= 3;
-        }
+        
         
         
     }

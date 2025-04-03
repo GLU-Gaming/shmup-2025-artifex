@@ -35,5 +35,11 @@ public class ForceField : MonoBehaviour
         ForceFieldLives -= 1;
     }
 
-    
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.tag == "EnemyWrapper")
+        {
+            Destroy(gameObject);
+        }
+    }
 }

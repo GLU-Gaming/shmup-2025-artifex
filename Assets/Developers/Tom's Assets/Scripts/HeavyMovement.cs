@@ -139,4 +139,12 @@ public class HeavyMovement : MonoBehaviour
     {
         HeavyLives -= 1;
     }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.tag == "EnemyWrapper")
+        {
+            Destroy(gameObject);
+        }
+    }
 }
