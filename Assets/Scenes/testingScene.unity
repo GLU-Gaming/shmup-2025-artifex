@@ -149,7 +149,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: 0.7071068, w: 0.7071068}
   m_LocalPosition: {x: -19.73, y: 0, z: 0}
-  m_LocalScale: {x: 0.40000004, y: 20, z: 0.4}
+  m_LocalScale: {x: 1, y: 20, z: 0.4}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 261182723}
@@ -682,7 +682,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1119473684}
   serializedVersion: 4
-  m_Mass: 5
+  m_Mass: 500
   m_Drag: 0
   m_AngularDrag: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}
@@ -699,7 +699,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 126
+  m_Constraints: 120
   m_CollisionDetection: 0
 --- !u!114 &1119473686
 MonoBehaviour:
@@ -716,6 +716,13 @@ MonoBehaviour:
   rb: {fileID: 1119473685}
   laser: {fileID: 0}
   enemyHealth: 15
+  waypoint1: {fileID: 0}
+  waypoint2: {fileID: 0}
+  waypoint3: {fileID: 0}
+  waypoint4: {fileID: 0}
+  waypoint5: {fileID: 0}
+  waypoint6: {fileID: 0}
+  waypoint7: {fileID: 0}
 --- !u!135 &1119473687
 SphereCollider:
   m_ObjectHideFlags: 0

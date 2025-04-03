@@ -11,19 +11,24 @@ public class mediumEnemy : MonoBehaviour
     //Behavior variables
     private EnemyBehavior State;
     private int IdleTimer = 5;
-
+    [SerializeField] public Transform waypoint1;
+    [SerializeField] public Transform waypoint2;
+    [SerializeField] public Transform waypoint3;
+    [SerializeField] public Transform waypoint4;
+    [SerializeField] public Transform waypoint5;
+    [SerializeField] public Transform waypoint6;
+    [SerializeField] public Transform waypoint7;
 
     //Behavior function setup
     enum EnemyBehavior
     {
         Idle,
-        LockingOn,
-        Shooting,
+        LockedOn,
         Reset,
     }
     void EnemyIdleLoop()
     {
-        //Enemy movement
+         //Chase waypoint
     }
     void Start()
     {
@@ -50,7 +55,7 @@ public class mediumEnemy : MonoBehaviour
         }
         if (IdleTimer < 0)
         {
-            State = EnemyBehavior.LockingOn;
+            State = EnemyBehavior.LockedOn;
         }
     }
 
