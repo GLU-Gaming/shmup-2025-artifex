@@ -88,7 +88,7 @@ public class HeavyMovement : MonoBehaviour
             }
         }
         else if (LightEnemies.Length <= 0) {
-            {
+            
                 
 
                 if (transform.position.y >= 10)
@@ -126,13 +126,15 @@ public class HeavyMovement : MonoBehaviour
                 transform.position += new Vector3(0, HeavyspeedY * Time.deltaTime * 10f, 0);
 
                 
-            }
+            
         }
 
         if (HeavyLives <= 0)
         {
             Destroy(gameObject);
         }
+
+        
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -142,7 +144,8 @@ public class HeavyMovement : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "EnemyWrapper")
+
+       if (other.gameObject.tag == "EnemyWrapper")
         {
             Destroy(gameObject);
         }

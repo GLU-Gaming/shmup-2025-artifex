@@ -23,7 +23,7 @@ TagManager:
   - ScreenWrapper
   - PlayerWrapper
   - EnemyWrapper
-  - 
+  - EnemySpawner
   - 
   - 
   - 

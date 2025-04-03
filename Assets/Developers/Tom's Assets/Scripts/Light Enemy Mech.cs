@@ -88,6 +88,7 @@ public class LightEnemyMech : MonoBehaviour
         }
         if (AttackCoolDown >= 0)
         {
+            //transform.position += new Vector3(transform.position.x * Time.deltaTime * 0.075f, TargetspeedY * Time.deltaTime * 20f, 0);
             transform.position += new Vector3(0, TargetspeedY * Time.deltaTime * 20f, 0);
         }
         if (AttackCoolDown < 0)
