@@ -10,31 +10,36 @@ public class mediumEnemy : MonoBehaviour
     public int enemyHealth = 15;
     //Behavior variables
     private EnemyBehavior State;
-    private int IdleTimer = 5;
-    [SerializeField] public Transform waypoint1;
-    [SerializeField] public Transform waypoint2;
-    [SerializeField] public Transform waypoint3;
-    [SerializeField] public Transform waypoint4;
-    [SerializeField] public Transform waypoint5;
-    [SerializeField] public Transform waypoint6;
-    [SerializeField] public Transform waypoint7;
+    private float IdleTimer = 100;
+    private float enemySpeed = 5;
+    [SerializeField] Transform[] targetPositions;
+    private int arrayCounter = 0;
+
 
     //Behavior function setup
     enum EnemyBehavior
     {
         Idle,
         LockedOn,
-        Reset,
     }
     void EnemyIdleLoop()
     {
-         //Chase waypoint
+        transform.position = Vector3.MoveTowards(transform.position, targetPositions[arrayCounter].position, enemySpeed * Time.deltaTime);
+        if (Vector3.Distance(transform.position, targetPositions[arrayCounter].position) <0.4f)
+        {
+            arrayCounter++;
+            if (arrayCounter >= targetPositions.Length)
+            {
+                arrayCounter = 0;
+            }
+        }
+
+        
     }
     void Start()
     {
         rb = GetComponent<Rigidbody>();
         State = EnemyBehavior.Idle;
-
     }
 
 
@@ -47,7 +52,7 @@ public class mediumEnemy : MonoBehaviour
         }
 
         //Behavior logic
-        IdleTimer--;
+        IdleTimer -= Time.deltaTime;
         
         if (State == EnemyBehavior.Idle)
         {
