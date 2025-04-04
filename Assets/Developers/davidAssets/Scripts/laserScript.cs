@@ -5,16 +5,14 @@ public class laserScript : MonoBehaviour
     [SerializeField] public GameManager Gamemanager;
     [SerializeField] public playerController Player;
     [SerializeField] public Collider laserCollider;
+    private GameObject laserParent;
     private bool laserFired = false;
-    //private float beamWidth = 1.0f;
-    private void LaserFire()
-    {
-        //Despawn met een effect Scale X
-        laserFired = true;
-    }
+    private float beamWidth = 2f;
+
     void Start()
     {
-        LaserFire();
+        laserFired = true;
+        laserParent = transform.parent.gameObject;
     }
 
      
@@ -22,7 +20,11 @@ public class laserScript : MonoBehaviour
     {
         if (laserFired == true)
         {
-            //gameObject.transform.localScale.x += Vector3(beamWidth, gameObject.transform.localScale.y, gameObject.transform.localScale.z);
+            gameObject.transform.localScale -= new Vector3(beamWidth * Time.deltaTime, 0 ,0);
+        }
+        if (gameObject.transform.localScale.x <= 0)
+        {
+            Destroy(laserParent);
         }
     }
 
