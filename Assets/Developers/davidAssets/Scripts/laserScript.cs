@@ -5,15 +5,27 @@ public class laserScript : MonoBehaviour
     [SerializeField] public GameManager Gamemanager;
     [SerializeField] public playerController Player;
     [SerializeField] public Collider laserCollider;
+    private GameObject laserParent;
+    private bool laserFired = false;
+    private float beamWidth = 2f;
+
     void Start()
     {
-        
+        laserFired = true;
+        laserParent = transform.parent.gameObject;
     }
 
-   
+     
     void Update()
     {
-        
+        if (laserFired == true)
+        {
+            gameObject.transform.localScale -= new Vector3(beamWidth * Time.deltaTime, 0 ,0);
+        }
+        if (gameObject.transform.localScale.x <= 0)
+        {
+            Destroy(laserParent);
+        }
     }
 
     //On contact logic

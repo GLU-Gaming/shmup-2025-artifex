@@ -10,26 +10,36 @@ public class mediumEnemy : MonoBehaviour
     public int enemyHealth = 15;
     //Behavior variables
     private EnemyBehavior State;
-    private int IdleTimer = 5;
+    private float IdleTimer = 100;
+    private float enemySpeed = 5;
+    [SerializeField] Transform[] targetPositions;
+    private int arrayCounter = 0;
 
 
     //Behavior function setup
     enum EnemyBehavior
     {
         Idle,
-        LockingOn,
-        Shooting,
-        Reset,
+        LockedOn,
     }
     void EnemyIdleLoop()
     {
-        //Enemy movement
+        transform.position = Vector3.MoveTowards(transform.position, targetPositions[arrayCounter].position, enemySpeed * Time.deltaTime);
+        if (Vector3.Distance(transform.position, targetPositions[arrayCounter].position) <0.4f)
+        {
+            arrayCounter++;
+            if (arrayCounter >= targetPositions.Length)
+            {
+                arrayCounter = 0;
+            }
+        }
+
+        
     }
     void Start()
     {
         rb = GetComponent<Rigidbody>();
         State = EnemyBehavior.Idle;
-
     }
 
 
@@ -42,7 +52,7 @@ public class mediumEnemy : MonoBehaviour
         }
 
         //Behavior logic
-        IdleTimer--;
+        IdleTimer -= Time.deltaTime;
         
         if (State == EnemyBehavior.Idle)
         {
@@ -50,7 +60,7 @@ public class mediumEnemy : MonoBehaviour
         }
         if (IdleTimer < 0)
         {
-            State = EnemyBehavior.LockingOn;
+            State = EnemyBehavior.LockedOn;
         }
     }
 
