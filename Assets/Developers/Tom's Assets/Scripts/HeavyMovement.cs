@@ -12,7 +12,7 @@ public class HeavyMovement : MonoBehaviour
 
     public float RegenerateTime = 10;
 
-    private int HeavyLives = 15;
+    private int HeavyLives = 10;
 
     [SerializeField] private float HeavyspeedIncreaseY;
 
@@ -42,7 +42,7 @@ public class HeavyMovement : MonoBehaviour
         if (forceField.ForceFieldLives < 0)
         {
             HeavyBulletReload += Time.deltaTime;
-            if(HeavyBulletReload >= 2)
+            if(HeavyBulletReload >= 1.5f)
             {
                 Instantiate(HeavyBullet, gameObject.transform.position, Quaternion.identity);
                 HeavyBulletReload = 0;
