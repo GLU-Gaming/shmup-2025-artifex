@@ -6,14 +6,17 @@ public class mediumEnemy : MonoBehaviour
     public Rigidbody rb;
     //Laser variables
     [SerializeField] public GameObject laser;
+    [SerializeField] public ParticleSystem charging;
     //Enemy health variables
     public int enemyHealth = 15;
     //Behavior variables
     private EnemyBehavior State;
-    private float IdleTimer = 100;
-    private float enemySpeed = 5;
+    private float IdleTimer = 10;
+    private float LockOnTimer = 1;
+    private float enemySpeed = 10;
     [SerializeField] Transform[] targetPositions;
     private int arrayCounter = 0;
+    [SerializeField] Transform laserSpawnPoint;
 
 
     //Behavior function setup
@@ -22,6 +25,7 @@ public class mediumEnemy : MonoBehaviour
         Idle,
         LockedOn,
     }
+    //Enemy idle behavior
     void EnemyIdleLoop()
     {
         transform.position = Vector3.MoveTowards(transform.position, targetPositions[arrayCounter].position, enemySpeed * Time.deltaTime);
@@ -33,8 +37,24 @@ public class mediumEnemy : MonoBehaviour
                 arrayCounter = 0;
             }
         }
-
-        
+    }
+    //Enemy locked on behavior
+    void EnemyLockedOnLoop()
+    {
+        IdleTimer = 10;
+        LockOnTimer -= Time.deltaTime;
+        Instantiate(charging, laserSpawnPoint);
+        Instantiate(charging, laserSpawnPoint);
+        Instantiate(charging, laserSpawnPoint);
+        Instantiate(charging, laserSpawnPoint);
+        Instantiate(charging, laserSpawnPoint);
+        Instantiate(charging, laserSpawnPoint);
+        if (LockOnTimer <= 0)
+        {
+            LockOnTimer = 1;
+            Instantiate(laser, laserSpawnPoint);
+            State = EnemyBehavior.Idle;
+        }
     }
     void Start()
     {
@@ -58,9 +78,19 @@ public class mediumEnemy : MonoBehaviour
         {
             EnemyIdleLoop();
         }
+        if (State == EnemyBehavior.LockedOn)
+        {
+            EnemyLockedOnLoop();
+        }
         if (IdleTimer < 0)
         {
             State = EnemyBehavior.LockedOn;
+            Instantiate(charging, laserSpawnPoint);
+            Instantiate(charging, laserSpawnPoint);
+            Instantiate(charging, laserSpawnPoint);
+            Instantiate(charging, laserSpawnPoint);
+            Instantiate(charging, laserSpawnPoint);
+            Instantiate(charging, laserSpawnPoint);
         }
     }
 
