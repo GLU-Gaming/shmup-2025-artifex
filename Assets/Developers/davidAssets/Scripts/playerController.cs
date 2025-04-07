@@ -79,6 +79,7 @@ public class playerController : MonoBehaviour
     {
         if (other.gameObject.tag == "Enemy")
         {
+            Debug.Log("OUU HET DOET ZEER");
             PlayerHit();
         }
     }

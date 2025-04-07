@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 6208833433873834082}
   - component: {fileID: 348958653291034287}
   - component: {fileID: 6715071762178067588}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Laser
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -135,9 +135,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8375023957194444872}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: laserPivot
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
