@@ -26,5 +26,6 @@ public class returnButton : MonoBehaviour
         SceneCount = 1;
         getValue.LoadSceneAndKeepValue();
         SceneManager.LoadScene("startScene");
+        
     }
 }

@@ -3,15 +3,15 @@ using UnityEngine;
 
 public class GiveValue : MonoBehaviour
 {
-    [SerializeField] TextMeshProUGUI myText;
+    [SerializeField] TextMeshProUGUI Score;
 
     public SaveHighScore HighScore;
 
     void Start()    
     {
-        
+
         string newText = StaticData.valueToKeep;
-        myText.text = newText;
+        Score.text = newText;
 
         int newNumber = StaticData.NumberToKeep;
         HighScore.Sscore = newNumber;

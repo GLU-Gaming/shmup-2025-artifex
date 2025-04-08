@@ -31,11 +31,11 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         
-        scoreText.text = "Score: " + score;
+        scoreText.text = "" + score;
 
         Score.text = "" + score;
 
-        LiveText.text = "Lives: " + Live;
+        LiveText.text = "" + Live;
 
         getValue = FindFirstObjectByType<GetValue>();
     }
@@ -61,7 +61,7 @@ public class GameManager : MonoBehaviour
     {
         score = score + amount;
 
-        scoreText.text = "Score: " + score;
+        scoreText.text = "" + score;
 
         Score.text = "" + score;
     }
@@ -72,7 +72,7 @@ public class GameManager : MonoBehaviour
     {
         Live = Live - amount;
 
-        LiveText.text = "Lives: " + Live;
+        LiveText.text = "" + Live;
     }
 
     

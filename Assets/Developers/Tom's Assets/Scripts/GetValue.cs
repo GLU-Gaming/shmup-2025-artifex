@@ -15,6 +15,7 @@ public class GetValue : MonoBehaviour
         string dataToKeep = myText.text;
         int score = game.score;
         int HighScore = game.HighScore;
+
         StaticData.valueToKeep = dataToKeep;
         StaticData.HighScoreToKeep = HighScore;
         StaticData.NumberToKeep = score;
