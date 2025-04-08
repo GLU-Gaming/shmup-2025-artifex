@@ -24,6 +24,7 @@ TagManager:
   - ScreenWrapper
   - PlayerWrapper
   - EnemyWrapper
+  - EnemySpawner
   - Laser
   - 
   - 

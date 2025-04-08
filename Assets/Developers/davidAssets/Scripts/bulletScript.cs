@@ -20,8 +20,23 @@ public class bulletScript : MonoBehaviour
     private void OnCollisionEnter(Collision collision)
     {
 
-       Instantiate(bulletCollision, transform.position, Quaternion.Euler(0, 0, 0));
-       Destroy(gameObject);
+       
+        
+         Destroy(gameObject);
+         
+        
+        if(collision.gameObject.tag == "Enemy")
+        {
+            Instantiate(bulletCollision, transform.position, Quaternion.Euler(0, 0, 0));
+            Destroy(gameObject);
+        }
+        else if(collision.gameObject.tag == "ForceField")
+        {
+            
+                Instantiate(bulletCollision, transform.position, Quaternion.Euler(0, 0, 0));
+                Destroy(gameObject);
+            
+        }
     }
 
 

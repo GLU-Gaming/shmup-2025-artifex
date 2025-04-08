@@ -237,6 +237,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0851ec82c0378964f8384b475751e356, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  getValue: {fileID: 0}
+  EndGetValue: {fileID: 0}
+  HighScore: 0
+  ReturnButton: {fileID: 0}
+  SceneCounter: 0
 --- !u!114 &83643747
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -249,6 +254,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d12d46bcb93d4bc44aba31323e843ee2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  getValue: {fileID: 0}
+  PlayButton: {fileID: 83643746}
+  SceneCount: 0
 --- !u!1 &709590232
 GameObject:
   m_ObjectHideFlags: 0

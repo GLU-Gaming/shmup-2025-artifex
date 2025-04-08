@@ -12,7 +12,7 @@ public class HeavyMovement : MonoBehaviour
 
     public float RegenerateTime = 10;
 
-    private int HeavyLives = 15;
+    private int HeavyLives = 10;
 
     [SerializeField] private float HeavyspeedIncreaseY;
 
@@ -26,12 +26,16 @@ public class HeavyMovement : MonoBehaviour
 
     private float HeavyBulletReload = 0;
 
+    [SerializeField] int scoreAmount = 100;
+
+    public GameManager game;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         forceField = GetComponentInChildren<ForceField>();
-        
-        
+
+        game = FindFirstObjectByType<GameManager>();
     }
 
     // Update is called once per frame
@@ -42,7 +46,7 @@ public class HeavyMovement : MonoBehaviour
         if (forceField.ForceFieldLives < 0)
         {
             HeavyBulletReload += Time.deltaTime;
-            if(HeavyBulletReload >= 2)
+            if(HeavyBulletReload >= 1.5f)
             {
                 Instantiate(HeavyBullet, gameObject.transform.position, Quaternion.identity);
                 HeavyBulletReload = 0;
@@ -88,7 +92,7 @@ public class HeavyMovement : MonoBehaviour
             }
         }
         else if (LightEnemies.Length <= 0) {
-            {
+            
                 
 
                 if (transform.position.y >= 10)
@@ -126,13 +130,16 @@ public class HeavyMovement : MonoBehaviour
                 transform.position += new Vector3(0, HeavyspeedY * Time.deltaTime * 10f, 0);
 
                 
-            }
+            
         }
 
         if (HeavyLives <= 0)
         {
             Destroy(gameObject);
+            game.AddScore(scoreAmount);
         }
+
+        
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -142,7 +149,8 @@ public class HeavyMovement : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "EnemyWrapper")
+
+       if (other.gameObject.tag == "EnemyWrapper")
         {
             Destroy(gameObject);
         }
