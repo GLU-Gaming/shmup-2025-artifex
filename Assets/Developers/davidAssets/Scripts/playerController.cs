@@ -18,12 +18,17 @@ public class playerController : MonoBehaviour
     public int playerHealth = 3;
     //Sparks effect
     [SerializeField] public ParticleSystem Sparks;
+
+    //Game Manager Vinden
+    public GameManager game;
+
+    [SerializeField] int LiveAmount = 1;
     void Start()
     {
         //Fetch rigidbody
         rb = GetComponent<Rigidbody>();
-        
 
+        game = FindFirstObjectByType<GameManager>();
     }
 
     
@@ -73,6 +78,7 @@ public class playerController : MonoBehaviour
         if(collision.gameObject.tag == "Enemy")
         {
             PlayerHit();
+            game.RemoveLive(LiveAmount);
         }
     }
     private void OnTriggerEnter(Collider other)

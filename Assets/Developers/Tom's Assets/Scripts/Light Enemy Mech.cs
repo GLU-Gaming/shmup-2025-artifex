@@ -13,6 +13,10 @@ enum LightEnemyState
 
 public class LightEnemyMech : MonoBehaviour
 {
+    [SerializeField] int scoreAmount = 25;
+
+    public GameManager game;
+
     private Transform Player;
 
     bool TargetDownOrUp = true;
@@ -44,7 +48,8 @@ public class LightEnemyMech : MonoBehaviour
         ReturnPoints = GetComponentInChildren<LightEnemyReturn>().gameObject;
 
         State = LightEnemyState.Idle;
-        
+
+        game = FindFirstObjectByType<GameManager>();
     }
 
 
@@ -128,6 +133,8 @@ public class LightEnemyMech : MonoBehaviour
         {
             Destroy(gameObject);
             Destroy(ReturnPoints);
+
+            game.AddScore(scoreAmount);
         }
 
 

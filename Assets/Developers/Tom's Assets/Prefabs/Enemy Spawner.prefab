@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 717588965351689851}
   - component: {fileID: 6132386954806738039}
   m_Layer: 13
-  m_Name: Enemy ScreenWrapper West (1)
+  m_Name: Enemy Spawner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -26,12 +26,16 @@ public class HeavyMovement : MonoBehaviour
 
     private float HeavyBulletReload = 0;
 
+    [SerializeField] int scoreAmount = 100;
+
+    public GameManager game;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         forceField = GetComponentInChildren<ForceField>();
-        
-        
+
+        game = FindFirstObjectByType<GameManager>();
     }
 
     // Update is called once per frame
@@ -132,6 +136,7 @@ public class HeavyMovement : MonoBehaviour
         if (HeavyLives <= 0)
         {
             Destroy(gameObject);
+            game.AddScore(scoreAmount);
         }
 
         
