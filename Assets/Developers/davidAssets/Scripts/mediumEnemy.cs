@@ -6,6 +6,7 @@ public class mediumEnemy : MonoBehaviour
     public Rigidbody rb;
     //Laser variables
     [SerializeField] public GameObject laser;
+    [SerializeField] public ParticleSystem charging;
     //Enemy health variables
     public int enemyHealth = 15;
     //Behavior variables
@@ -42,9 +43,17 @@ public class mediumEnemy : MonoBehaviour
     {
         IdleTimer = 10;
         LockOnTimer -= Time.deltaTime;
+        Instantiate(charging, laserSpawnPoint);
+        Instantiate(charging, laserSpawnPoint);
+        Instantiate(charging, laserSpawnPoint);
+        Instantiate(charging, laserSpawnPoint);
+        Instantiate(charging, laserSpawnPoint);
+        Instantiate(charging, laserSpawnPoint);
         if (LockOnTimer <= 0)
         {
-            Debug.Log("Firing");
+            LockOnTimer = 1;
+            Instantiate(laser, laserSpawnPoint);
+            State = EnemyBehavior.Idle;
         }
     }
     void Start()
@@ -76,6 +85,12 @@ public class mediumEnemy : MonoBehaviour
         if (IdleTimer < 0)
         {
             State = EnemyBehavior.LockedOn;
+            Instantiate(charging, laserSpawnPoint);
+            Instantiate(charging, laserSpawnPoint);
+            Instantiate(charging, laserSpawnPoint);
+            Instantiate(charging, laserSpawnPoint);
+            Instantiate(charging, laserSpawnPoint);
+            Instantiate(charging, laserSpawnPoint);
         }
     }
 

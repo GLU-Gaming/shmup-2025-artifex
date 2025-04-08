@@ -9,6 +9,7 @@ TagManager:
   - Bullet
   - Enemy
   - EnemyWrapper
+  - Laser
   layers:
   - Default
   - TransparentFX
@@ -24,6 +25,7 @@ TagManager:
   - PlayerWrapper
   - EnemyWrapper
   - EnemySpawner
+  - Laser
   - 
   - 
   - 

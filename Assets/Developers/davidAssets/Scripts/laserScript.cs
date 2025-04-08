@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class laserScript : MonoBehaviour
 {
-    [SerializeField] public GameManager Gamemanager;
+    public GameManager Gamemanager;
     [SerializeField] public playerController Player;
     [SerializeField] public Collider laserCollider;
     private GameObject laserParent;
@@ -13,6 +13,8 @@ public class laserScript : MonoBehaviour
     {
         laserFired = true;
         laserParent = transform.parent.gameObject;
+        Gamemanager = FindFirstObjectByType<GameManager>();
+        Player = FindFirstObjectByType<playerController>();
     }
 
      
@@ -32,5 +34,6 @@ public class laserScript : MonoBehaviour
     public void OnTriggerEnter(Collider other)
     {
         laserCollider.enabled = false;
+        Debug.Log("HIT");
     }
 }
