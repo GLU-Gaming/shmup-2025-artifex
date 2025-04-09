@@ -67,7 +67,7 @@ public class playerController : MonoBehaviour
         bulletTimer -= Time.deltaTime;
         if (Input.GetKey(KeyCode.Space) == true && bulletTimer < -0.2f)
         {
-            Instantiate(Bullet, bulletSpawnPoint.position, Quaternion.Euler(90, 0, 90));
+            Instantiate(Bullet, bulletSpawnPoint.position, Quaternion.Euler(90, 90, 0));
             bulletTimer = 0.0f;
         }
     }
