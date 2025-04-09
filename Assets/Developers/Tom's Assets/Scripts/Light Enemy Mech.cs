@@ -39,13 +39,15 @@ public class LightEnemyMech : MonoBehaviour
     public int LightEnemyLives = 3;
 
     private Vector3 PositionReturn;
-    
+
+    public MainBossMechanics MainBoss;
 
     void Start()
     {
         Player = FindFirstObjectByType<playerController>().transform;
         ReturnPoint = GetComponentInChildren<LightEnemyReturn>().transform;
         ReturnPoints = GetComponentInChildren<LightEnemyReturn>().gameObject;
+        MainBoss = FindFirstObjectByType<MainBossMechanics>();
 
         State = LightEnemyState.Idle;
 
@@ -131,10 +133,12 @@ public class LightEnemyMech : MonoBehaviour
 
         if(LightEnemyLives <= 0)
         {
+
+            game.AddScore(scoreAmount);
             Destroy(gameObject);
             Destroy(ReturnPoints);
 
-            game.AddScore(scoreAmount);
+            
         }
 
 
@@ -161,8 +165,13 @@ public class LightEnemyMech : MonoBehaviour
         if(collision.gameObject.tag == "Bullet")
         {
             LightEnemyLives -= 1;
-            if(game.BossLives == 3)
+            if(MainBoss.MainBossLives <= 3)
             {
+                if(LightEnemyLives <= 0)
+                {
+                    game.AddScore(scoreAmount);
+                    game.RemoveBossEnemies(gameObject);
+                }
 
             }
         }

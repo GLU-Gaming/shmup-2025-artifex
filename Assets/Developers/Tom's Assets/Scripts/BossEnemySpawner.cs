@@ -7,16 +7,18 @@ public class BossEnemySpawner : MonoBehaviour
     [SerializeField] private GameObject HeavyEnemy;
 
     public GameManager game;
+    public MainBossMechanics MainBoss;
 
     void Start()
     {
         game = FindFirstObjectByType<GameManager>();
+        MainBoss = FindFirstObjectByType<MainBossMechanics>();
     }
 
 
     void Update()
     {
-       if(game.BossLives == 2)
+       if(MainBoss.MainBossLives == 2)
         {
             LightEnemy2.gameObject.SetActive(true);
         }

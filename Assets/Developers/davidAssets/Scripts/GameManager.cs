@@ -32,10 +32,11 @@ public class GameManager : MonoBehaviour
     public int HighScore = 0;
 
     public float BossTimer = 1;
-    public int BossLives = 3;
+    
 
     public int SceneCount;
 
+    public MainBossMechanics MainBoss;
 
     public GetValue getValue;
 
@@ -50,6 +51,7 @@ public class GameManager : MonoBehaviour
         LiveText.text = "" + Live;
 
         getValue = FindFirstObjectByType<GetValue>();
+        MainBoss = FindFirstObjectByType<MainBossMechanics>();
     }
     void Update()
     {
@@ -59,19 +61,18 @@ public class GameManager : MonoBehaviour
             PlayerDeath();
         }
 
-        if (BossEnemies.Count < 0)
+        if (BossEnemies.Count <= 0)
         {
             
-            if(BossLives >= 3)
+            if(MainBoss.MainBossLives == 2)
             {
-                BossLives = 2;
                 BossTimer = 0;
             }
            
         }
 
         
-        if (BossTimer < 0) 
+        if (BossTimer <= 0) 
         { 
         
             StartNewBossRound();
@@ -83,7 +84,7 @@ public class GameManager : MonoBehaviour
 
     private void StartNewBossRound()
     {
-        if (BossLives >= 2)
+        if (MainBoss.MainBossLives >= 2)
         {
             if (BossTimer < 0)
             {
@@ -123,6 +124,13 @@ public class GameManager : MonoBehaviour
     }
 
 
+    public void RemoveBossEnemies(GameObject BossEnemiesToRemove)
+    {
+        
 
-    
+        BossEnemies.Remove(BossEnemiesToRemove);
+
+        Destroy(BossEnemiesToRemove);
+    }
+
 }
