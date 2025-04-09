@@ -179,6 +179,16 @@ public class LightEnemyMech : MonoBehaviour
         if(collision.gameObject.tag == "OnderZeeer")
         {
             LightEnemyLives -= 3;
+
+            if (MainBoss.MainBossLives <= 3)
+            {
+                if (LightEnemyLives <= 0)
+                {
+                    game.AddScore(scoreAmount);
+                    game.RemoveBossEnemies(gameObject);
+                }
+
+            }
         }
 
         

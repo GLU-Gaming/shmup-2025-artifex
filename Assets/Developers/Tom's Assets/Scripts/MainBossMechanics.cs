@@ -26,6 +26,7 @@ public class MainBossMechanics : MonoBehaviour
         if(collision.gameObject.tag == "Bullet")
         {
             MainBossLives -= 1;
+            game.BossTimer = 0;
         }
     }
 }

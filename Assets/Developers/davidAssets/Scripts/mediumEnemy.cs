@@ -18,6 +18,10 @@ public class mediumEnemy : MonoBehaviour
     private int arrayCounter = 0;
     [SerializeField] Transform laserSpawnPoint;
 
+    public GameManager game;
+    public MainBossMechanics MainBoss;
+
+    private int scoreAmount = 50;
 
     //Behavior function setup
     enum EnemyBehavior
@@ -60,6 +64,9 @@ public class mediumEnemy : MonoBehaviour
     {
         rb = GetComponent<Rigidbody>();
         State = EnemyBehavior.Idle;
+
+        MainBoss = FindFirstObjectByType<MainBossMechanics>();
+        game = FindFirstObjectByType<GameManager>();
     }
 
 
@@ -99,6 +106,15 @@ public class mediumEnemy : MonoBehaviour
     public void OnCollisionEnter(Collision collision)
     {
         enemyHealth--;
+        if (MainBoss.MainBossLives <= 3)
+        {
+            if (enemyHealth <= 0)
+            {
+                game.AddScore(scoreAmount);
+                game.RemoveBossEnemies(gameObject);
+            }
+
+        }
     }
 
     

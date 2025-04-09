@@ -30,12 +30,16 @@ public class HeavyMovement : MonoBehaviour
 
     public GameManager game;
 
+    public MainBossMechanics MainBoss;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         forceField = GetComponentInChildren<ForceField>();
 
         game = FindFirstObjectByType<GameManager>();
+
+        MainBoss = FindFirstObjectByType<MainBossMechanics>();
     }
 
     // Update is called once per frame
@@ -145,6 +149,16 @@ public class HeavyMovement : MonoBehaviour
     private void OnCollisionEnter(Collision collision)
     {
         HeavyLives -= 1;
+        if (MainBoss.MainBossLives <= 3)
+        {
+            if (HeavyLives <= 0)
+            {
+                game.AddScore(scoreAmount);
+                game.RemoveBossEnemies(gameObject);
+            }
+
+        }
+
     }
 
     private void OnTriggerEnter(Collider other)

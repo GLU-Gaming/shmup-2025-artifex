@@ -23,6 +23,8 @@ public class playerController : MonoBehaviour
     public GameManager game;
 
     [SerializeField] int LiveAmount = 1;
+
+    private float InvincibilityFrames = 2;
     void Start()
     {
         //Fetch rigidbody
@@ -70,6 +72,15 @@ public class playerController : MonoBehaviour
             Instantiate(Bullet, bulletSpawnPoint.position, Quaternion.Euler(90, 90, 0));
             bulletTimer = 0.0f;
         }
+
+        if(InvincibilityFrames < 2)
+        {
+            InvincibilityFrames += Time.deltaTime;
+        }
+        if(InvincibilityFrames >= 2)
+        {
+            transform.GetComponent<BoxCollider>().enabled = true;
+        }
     }
 
     //Health logic
@@ -87,12 +98,15 @@ public class playerController : MonoBehaviour
         {
             Debug.Log("OUU HET DOET ZEER");
             PlayerHit();
+            game.RemoveLive(LiveAmount);
         }
     }
 
     public void PlayerHit()
     {
         playerHealth = playerHealth - 1;
+        transform.GetComponent<BoxCollider>().enabled = false;
+        InvincibilityFrames = 0;
         Instantiate(Sparks, gameObject.transform.position, Quaternion.Euler(0, 0, 0));
     }
 }

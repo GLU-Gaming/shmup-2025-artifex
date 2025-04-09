@@ -21,8 +21,22 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] public List<GameObject> BossEnemies = new List<GameObject>();
 
-    [SerializeField] private GameObject LightEnemy;
-    [SerializeField] private GameObject LightEnemy1;
+    //Phase 1 Enemies
+    [SerializeField] private GameObject LightEnemy1Phase1;
+    [SerializeField] private GameObject LightEnemy2Phase1;
+    [SerializeField] private GameObject LightEnemy3Phase1;
+    [SerializeField] private GameObject MediumEnemy1Phase1;
+    [SerializeField] private GameObject MediumEnemy2Phase1;
+    [SerializeField] private GameObject MediumEnemy3Phase1;
+
+    //Phase 2 Enemies
+    [SerializeField] private GameObject LightEnemy1Phase2;
+    [SerializeField] private GameObject LightEnemy2Phase2;
+    [SerializeField] private GameObject MediumEnemy1Phase2;
+    [SerializeField] private GameObject MediumEnemy2Phase2;
+    [SerializeField] private GameObject HeavyEnemy1Phase2;
+    [SerializeField] private GameObject HeavyEnemy2Phase2;
+
 
     //Playership variables
     [SerializeField] public playerController player;
@@ -42,7 +56,13 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
-        BossEnemies.Add(LightEnemy);
+        BossEnemies.Add(LightEnemy1Phase1);
+        BossEnemies.Add(LightEnemy2Phase1);
+        BossEnemies.Add(LightEnemy3Phase1);
+        BossEnemies.Add(MediumEnemy1Phase1);
+        BossEnemies.Add(MediumEnemy2Phase1);
+        BossEnemies.Add(MediumEnemy3Phase1);
+
 
         scoreText.text = "" + score;
 
@@ -66,6 +86,7 @@ public class GameManager : MonoBehaviour
             
             if(MainBoss.MainBossLives == 2)
             {
+                Debug.Log("test");
                 BossTimer = 0;
             }
            
@@ -76,7 +97,7 @@ public class GameManager : MonoBehaviour
         { 
         
             StartNewBossRound();
-            BossTimer = 1;
+            
         }
 
         
@@ -84,12 +105,19 @@ public class GameManager : MonoBehaviour
 
     private void StartNewBossRound()
     {
-        if (MainBoss.MainBossLives >= 2)
+        if (MainBoss.MainBossLives == 2)
         {
-            if (BossTimer < 0)
+            if (BossTimer <= 0)
             {
+                
 
-                BossEnemies.Add(LightEnemy1);
+                BossEnemies.Add(LightEnemy1Phase2);
+                BossEnemies.Add(LightEnemy2Phase2);
+                BossEnemies.Add(MediumEnemy1Phase2);
+                BossEnemies.Add(MediumEnemy2Phase2);
+                BossEnemies.Add(HeavyEnemy1Phase2);
+                BossEnemies.Add(HeavyEnemy2Phase2);
+                BossTimer = 1;
 
             }
         }

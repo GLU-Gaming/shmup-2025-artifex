@@ -34,6 +34,7 @@ public class laserScript : MonoBehaviour
     public void OnTriggerEnter(Collider other)
     {
         laserCollider.enabled = false;
+
         Debug.Log("HIT");
     }
 }

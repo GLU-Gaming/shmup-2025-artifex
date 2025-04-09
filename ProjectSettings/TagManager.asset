@@ -12,6 +12,7 @@ TagManager:
   - Laser
   - ForceField
   - BossEnemyWrapper
+  - PlayerScreenWrapper
   layers:
   - Default
   - TransparentFX
@@ -28,7 +29,7 @@ TagManager:
   - EnemyWrapper
   - EnemySpawner
   - Laser
-  - 
+  - BossSpawner
   - 
   - 
   - 

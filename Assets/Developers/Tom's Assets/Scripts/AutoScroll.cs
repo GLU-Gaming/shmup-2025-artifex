@@ -2,9 +2,9 @@ using UnityEngine;
 
 public class AutoScroll : MonoBehaviour
 {
-    [SerializeField] private int forwardThrust = 0;
+    public int forwardThrust = 125;
 
-    Rigidbody rb;
+    public Rigidbody rb;
     [SerializeField] ParticleSystem bulletCollision;
     void Start()
     {
