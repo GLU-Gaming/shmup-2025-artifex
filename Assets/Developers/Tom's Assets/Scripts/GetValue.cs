@@ -15,10 +15,12 @@ public class GetValue : MonoBehaviour
         string dataToKeep = myText.text;
         int score = game.score;
         int HighScore = game.HighScore;
+        int SceneCount = game.SceneCount;
 
         StaticData.valueToKeep = dataToKeep;
         StaticData.HighScoreToKeep = HighScore;
         StaticData.NumberToKeep = score;
+        StaticData.SceneCount = SceneCount;
         
     }
 

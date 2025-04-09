@@ -10,13 +10,16 @@ public class playButton : MonoBehaviour
 
     public returnButton ReturnButton;
 
-    public int SceneCounter;
+    public int SceneCounter = 1;
+
+    private int ResetCounter;
 
     void Start()
     {
         getValue = FindFirstObjectByType<GetValueStart>();
         EndGetValue = FindAnyObjectByType<GetValueEnd>();
         ReturnButton = FindAnyObjectByType<returnButton>();
+        
     }
  
     void Update()
@@ -26,18 +29,21 @@ public class playButton : MonoBehaviour
 
     public void StartNextScene()
     {
-        
 
-        if(SceneCounter == 0)
+        if (SceneCounter == 0)
         {
+            SceneCounter = 1;
+            getValue.LoadSceneAndKeepValue();
+            SceneManager.LoadScene("mainScene");
+            
+        }
+        else if (SceneCounter == 1)
+        {
+
             EndGetValue.LoadSceneAndKeepValue();
             SceneManager.LoadScene("mainScene");
         }
-        if (SceneCounter == 1) 
-        {
-            getValue.LoadSceneAndKeepValue();
-            SceneManager.LoadScene("mainScene");
-        }
+        
         
     }
 

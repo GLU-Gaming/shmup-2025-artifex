@@ -7,6 +7,8 @@ public class GiveValue : MonoBehaviour
 
     public SaveHighScore HighScore;
 
+    public playButton PlayButton;
+
     void Start()    
     {
 
@@ -19,10 +21,14 @@ public class GiveValue : MonoBehaviour
         int NewHighScore = StaticData.HighScoreToKeep;
         HighScore.highScore = NewHighScore;
 
-        Debug.Log(HighScore.Sscore);
-        Debug.Log(HighScore.highScore);
+        int NewSceneCounter = StaticData.SceneCount;
+        HighScore.SceneCount = NewSceneCounter;
+
+        
 
         HighScore = FindFirstObjectByType<SaveHighScore>();
+
+        PlayButton = FindFirstObjectByType<playButton>();
     }
 
 }
