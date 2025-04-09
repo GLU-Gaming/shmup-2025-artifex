@@ -14567,6 +14567,14 @@ PrefabInstance:
       propertyPath: game
       value: 
       objectReference: {fileID: 1078822807}
+    - target: {fileID: 6289504223393067441, guid: 56d4aacdc0c787a49990edd6f3e9d766, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 3a03d9012f50f8b4cbd951e46ec1ffa3, type: 2}
+    - target: {fileID: 6680473555278712249, guid: 56d4aacdc0c787a49990edd6f3e9d766, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 75bd02a2e97e12e4ca7ff9d2f2b34e58, type: 2}
     - target: {fileID: 7114584628292127173, guid: 56d4aacdc0c787a49990edd6f3e9d766, type: 3}
       propertyPath: m_Name
       value: Player
