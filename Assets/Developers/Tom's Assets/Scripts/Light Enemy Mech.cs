@@ -161,6 +161,10 @@ public class LightEnemyMech : MonoBehaviour
         if(collision.gameObject.tag == "Bullet")
         {
             LightEnemyLives -= 1;
+            if(game.BossLives == 3)
+            {
+
+            }
         }
 
         if(collision.gameObject.tag == "OnderZeeer")

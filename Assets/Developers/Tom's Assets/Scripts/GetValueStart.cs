@@ -10,6 +10,9 @@ public class GetValueStart : MonoBehaviour
         int HighScore = PlayButton.HighScore;
         StaticData.HighScoreToKeep = HighScore;
 
+        int SceneCount = PlayButton.SceneCounter;
+        StaticData.SceneCounter = SceneCount;
+
     }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created

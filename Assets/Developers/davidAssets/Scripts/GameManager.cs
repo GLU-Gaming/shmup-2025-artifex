@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -18,6 +19,11 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] private TextMeshProUGUI LiveText;
 
+    [SerializeField] public List<GameObject> BossEnemies = new List<GameObject>();
+
+    [SerializeField] private GameObject LightEnemy;
+    [SerializeField] private GameObject LightEnemy1;
+
     //Playership variables
     [SerializeField] public playerController player;
     [SerializeField] public Transform playerPosition;
@@ -25,12 +31,18 @@ public class GameManager : MonoBehaviour
 
     public int HighScore = 0;
 
+    public float BossTimer = 1;
+    public int BossLives = 3;
+
+    public int SceneCount;
+
 
     public GetValue getValue;
 
     void Start()
     {
-        
+        BossEnemies.Add(LightEnemy);
+
         scoreText.text = "" + score;
 
         Score.text = "" + score;
@@ -46,6 +58,41 @@ public class GameManager : MonoBehaviour
         {
             PlayerDeath();
         }
+
+        if (BossEnemies.Count < 0)
+        {
+            
+            if(BossLives >= 3)
+            {
+                BossLives = 2;
+                BossTimer = 0;
+            }
+
+        }
+
+        
+        if (BossTimer < 0) 
+        { 
+        
+            StartNewBossRound();
+            BossTimer = 1;
+        }
+
+        
+    }
+
+    private void StartNewBossRound()
+    {
+        if (BossLives >= 2)
+        {
+            if (BossTimer < 0)
+            {
+
+                BossEnemies.Add(LightEnemy1);
+
+            }
+        }
+
     }
 
     public void PlayerDeath()
@@ -74,6 +121,8 @@ public class GameManager : MonoBehaviour
 
         LiveText.text = "" + Live;
     }
+
+
 
     
 }

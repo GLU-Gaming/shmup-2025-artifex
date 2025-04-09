@@ -23,7 +23,7 @@ public class returnButton : MonoBehaviour
 
     public void StartSceneSkip()
     {
-        SceneCount = 1;
+        SceneCount = 0;
         getValue.LoadSceneAndKeepValue();
         SceneManager.LoadScene("startScene");
         

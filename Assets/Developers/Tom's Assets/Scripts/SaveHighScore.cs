@@ -20,12 +20,16 @@ public class SaveHighScore : MonoBehaviour
 
     public int highScore = 0;
 
-    
+    public int SceneCount;
+
+    public playButton PlayButton;
 
     [SerializeField] TextMeshProUGUI HighScore;
     void Start()
     {
+        PlayButton = FindFirstObjectByType<playButton>();
         State = HighScores.Idle;
+        
     }
 
     // Update is called once per frame
@@ -51,6 +55,6 @@ public class SaveHighScore : MonoBehaviour
             }
         }
 
-        
+        PlayButton.SceneCounter = SceneCount;
     }
 }
