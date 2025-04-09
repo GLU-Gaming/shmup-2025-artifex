@@ -14,16 +14,26 @@ public class playButton : MonoBehaviour
 
     private int ResetCounter;
 
+    public SaveHighScore Highscore;
+
     void Start()
     {
         getValue = FindFirstObjectByType<GetValueStart>();
         EndGetValue = FindAnyObjectByType<GetValueEnd>();
         ReturnButton = FindAnyObjectByType<returnButton>();
-        
+        Highscore = FindAnyObjectByType<SaveHighScore>();
+
     }
  
     void Update()
     {
+        if(SceneCounter > 1)
+        {
+            if (Highscore.SceneCount > 1)   
+            {
+                Highscore.SceneCount = 1;
+            }
+        }
         
     }
 

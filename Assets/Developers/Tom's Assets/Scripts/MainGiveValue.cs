@@ -13,6 +13,9 @@ public class MainGiveValue : MonoBehaviour
         int NewSceneCount = StaticData.SceneCounter;
         game.SceneCount = NewSceneCount;
 
+        int NewsceneCount = StaticData.SceneCount;
+        game.SceneCount += NewSceneCount = NewsceneCount;
+
         Debug.Log(game.HighScore);
 
         game = FindFirstObjectByType<GameManager>();

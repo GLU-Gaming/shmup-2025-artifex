@@ -67,7 +67,7 @@ public class GameManager : MonoBehaviour
                 BossLives = 2;
                 BossTimer = 0;
             }
-
+           
         }
 
         
