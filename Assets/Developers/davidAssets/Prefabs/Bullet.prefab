@@ -125,7 +125,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 95bdaeaf013fa864383792b2bf68346f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  forwardThrust: 2000
+  forwardThrust: 3000
   bulletCollision: {fileID: 4312010197995711018, guid: 52c7d504a0604b241a95640111282cee, type: 3}
 --- !u!54 &6178601209302845204
 Rigidbody:
