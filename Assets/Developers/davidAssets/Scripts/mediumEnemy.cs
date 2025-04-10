@@ -8,7 +8,7 @@ public class mediumEnemy : MonoBehaviour
     [SerializeField] public GameObject laser;
     [SerializeField] public ParticleSystem charging;
     //Enemy health variables
-    public int enemyHealth = 15;
+    public int enemyHealth = 10;
     //Behavior variables
     private EnemyBehavior State;
     private float IdleTimer = 10;
@@ -22,7 +22,9 @@ public class mediumEnemy : MonoBehaviour
     public MainBossMechanics MainBoss;
 
     private int scoreAmount = 50;
-
+    //Audio variables
+    [SerializeField] private AudioSource laserSfx;
+    [SerializeField] private AudioSource hitSoundSfx;
     //Behavior function setup
     enum EnemyBehavior
     {
@@ -45,8 +47,10 @@ public class mediumEnemy : MonoBehaviour
     //Enemy locked on behavior
     void EnemyLockedOnLoop()
     {
+        laserSfx.Play();
         IdleTimer = 10;
         LockOnTimer -= Time.deltaTime;
+        
         Instantiate(charging, laserSpawnPoint);
         Instantiate(charging, laserSpawnPoint);
         Instantiate(charging, laserSpawnPoint);
@@ -56,6 +60,7 @@ public class mediumEnemy : MonoBehaviour
         if (LockOnTimer <= 0)
         {
             LockOnTimer = 1;
+            
             Instantiate(laser, laserSpawnPoint);
             State = EnemyBehavior.Idle;
         }
@@ -92,6 +97,7 @@ public class mediumEnemy : MonoBehaviour
         if (IdleTimer < 0)
         {
             State = EnemyBehavior.LockedOn;
+            
             Instantiate(charging, laserSpawnPoint);
             Instantiate(charging, laserSpawnPoint);
             Instantiate(charging, laserSpawnPoint);
@@ -105,6 +111,7 @@ public class mediumEnemy : MonoBehaviour
     //Damage logic
     public void OnCollisionEnter(Collision collision)
     {
+        hitSoundSfx.Play();
         enemyHealth--;
         if (MainBoss.MainBossLives <= 3)
         {
