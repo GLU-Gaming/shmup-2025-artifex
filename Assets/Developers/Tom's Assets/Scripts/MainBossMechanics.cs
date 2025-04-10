@@ -4,7 +4,7 @@ using UnityEngine.SceneManagement;
 public class MainBossMechanics : MonoBehaviour
 {
 
-    public int MainBossLives = 1;
+    public int MainBossLives = 3;
 
     [SerializeField] private GameObject Trident;
 
@@ -47,9 +47,9 @@ public class MainBossMechanics : MonoBehaviour
 
         if(MainBossLives <= 0)
         {
-            game.SceneCount = 0;
+            game.SceneCount = 1;
             getValue.LoadSceneAndKeepValue();
-            SceneManager.LoadScene("startScene");
+            SceneManager.LoadScene("endScene");
         }
 
         if (transform.GetComponent<BoxCollider>().enabled == true) 

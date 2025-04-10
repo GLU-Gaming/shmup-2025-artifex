@@ -24,12 +24,17 @@ public class SaveHighScore : MonoBehaviour
 
     public playButton PlayButton;
 
+    [SerializeField] private TextMeshProUGUI WinOrLoseText;
+
     [SerializeField] TextMeshProUGUI HighScore;
+
+    public int BossLiveCount = 0;
     void Start()
     {
         PlayButton = FindFirstObjectByType<playButton>();
         State = HighScores.Idle;
-        
+
+
     }
 
     // Update is called once per frame
@@ -56,5 +61,15 @@ public class SaveHighScore : MonoBehaviour
         }
 
         PlayButton.SceneCounter = SceneCount;
+
+
+        if (BossLiveCount <= 0)
+        {
+            WinOrLoseText.text = "You Win! You Defeated The Boss!";
+        }
+        else if (BossLiveCount >= 0)
+        {
+            WinOrLoseText.text = "Your Ship Was destroyed!";
+        }
     }
 }

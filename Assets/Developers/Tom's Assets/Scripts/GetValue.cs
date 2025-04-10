@@ -9,6 +9,7 @@ public class GetValue : MonoBehaviour
 
     [SerializeField] TextMeshProUGUI myText;
 
+    public MainBossMechanics MainBoss;
     public void LoadSceneAndKeepValue()
     {
         
@@ -17,12 +18,14 @@ public class GetValue : MonoBehaviour
         int HighScore = game.HighScore;
         int SceneCount = game.SceneCount;
         int SceneCounter = game.SceneCount;
+        int BossLiveCount = MainBoss.MainBossLives;
 
         StaticData.valueToKeep = dataToKeep;
         StaticData.HighScoreToKeep = HighScore;
         StaticData.NumberToKeep = score;
         StaticData.SceneCount = SceneCount;
         StaticData.SceneCounter = SceneCounter;
+        StaticData.BossLives = BossLiveCount;
 
 
     }
@@ -30,5 +33,6 @@ public class GetValue : MonoBehaviour
     private void Start()
     {
         game = FindFirstObjectByType<GameManager>();
+        MainBoss = FindFirstObjectByType<MainBossMechanics>();
     }
 }

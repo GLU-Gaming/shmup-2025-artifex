@@ -24,6 +24,9 @@ public class GiveValue : MonoBehaviour
         int NewSceneCounter = StaticData.SceneCount;
         HighScore.SceneCount = NewSceneCounter;
 
+        int newBossLiveCount = StaticData.BossLives;
+        HighScore.BossLiveCount = newBossLiveCount;
+
         
 
         HighScore = FindFirstObjectByType<SaveHighScore>();
