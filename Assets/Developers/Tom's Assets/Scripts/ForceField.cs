@@ -5,7 +5,7 @@ public class ForceField : MonoBehaviour
     private HeavyMovement heavyMovement;
 
     public int ForceFieldLives = 30;
-
+    [SerializeField] private AudioSource collisionSfx;
     
 
 
@@ -32,6 +32,7 @@ public class ForceField : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
+        collisionSfx.Play();
         ForceFieldLives -= 1;
     }
 

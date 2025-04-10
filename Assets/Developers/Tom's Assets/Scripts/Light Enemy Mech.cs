@@ -42,6 +42,8 @@ public class LightEnemyMech : MonoBehaviour
 
     public MainBossMechanics MainBoss;
 
+    [SerializeField] private AudioSource hitSoundSfx;
+
     void Start()
     {
         Player = FindFirstObjectByType<playerController>().transform;
@@ -165,6 +167,7 @@ public class LightEnemyMech : MonoBehaviour
     {
         if (collision.gameObject.tag == "Bullet")
         {
+            hitSoundSfx.Play();
             LightEnemyLives -= 1;
             if (MainBoss.MainBossLives <= 3)
             {

@@ -18,14 +18,12 @@ public class playerController : MonoBehaviour
     public int playerHealth = 3;
     //Sparks effect
     [SerializeField] public ParticleSystem Sparks;
-
+    //Audio
+    [SerializeField] private AudioSource hitSoundSfx;
     //Game Manager Vinden
     public GameManager game;
-
     [SerializeField] int LiveAmount = 1;
-
     [SerializeField] private GameObject Gunturret;
-
     private float InvincibilityFrames = 2;
     void Start()
     {
@@ -107,6 +105,7 @@ public class playerController : MonoBehaviour
 
     public void PlayerHit()
     {
+        hitSoundSfx.Play();
         playerHealth = playerHealth - 1;
         transform.GetComponent<BoxCollider>().enabled = false;
         InvincibilityFrames = 0;

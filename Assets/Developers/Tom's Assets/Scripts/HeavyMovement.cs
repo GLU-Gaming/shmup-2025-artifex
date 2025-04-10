@@ -32,6 +32,7 @@ public class HeavyMovement : MonoBehaviour
 
     public MainBossMechanics MainBoss;
 
+    [SerializeField] private AudioSource hitSoundSfx;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -148,6 +149,7 @@ public class HeavyMovement : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
+        hitSoundSfx.Play();
         HeavyLives -= 1;
         if (MainBoss.MainBossLives <= 3)
         {
