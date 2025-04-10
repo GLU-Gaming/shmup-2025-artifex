@@ -27,6 +27,8 @@ public class GiveValue : MonoBehaviour
         int newBossLiveCount = StaticData.BossLives;
         HighScore.BossLiveCount = newBossLiveCount;
 
+        float NewPlayTimer = StaticData.GameTime;
+        HighScore.PlayTime = NewPlayTimer;
         
 
         HighScore = FindFirstObjectByType<SaveHighScore>();

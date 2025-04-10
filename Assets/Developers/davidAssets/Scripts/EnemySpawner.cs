@@ -38,7 +38,7 @@ public class EnemySpawner : MonoBehaviour
     //Enemy wave 1
     private void OnTriggerEnter(Collider other)
     {
-        if (!other.gameObject.CompareTag("OnderZeeer")) return;
+        if (!other.gameObject.CompareTag("PlayerScreenWrapper")) return;
 
         enemySpawner.enabled = false;
 

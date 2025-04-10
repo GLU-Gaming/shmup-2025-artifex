@@ -114,7 +114,7 @@ public class LightEnemyMech : MonoBehaviour
 
 
                 AttackCoolDown = -0.1f;
-                transform.position = new Vector3(transform.position.x - Time.deltaTime * 20, Mathf.Lerp(transform.position.y, Player.transform.position.y, Time.deltaTime * 3), transform.position.z);
+                transform.position = new Vector3(transform.position.x - Time.deltaTime * 20, Mathf.Lerp(transform.position.y, Player.transform.position.y, Time.deltaTime * 2.125f), transform.position.z);
             }
         }
 

@@ -21,6 +21,8 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] public List<GameObject> BossEnemies = new List<GameObject>();
 
+    public float Timer;
+
     //Phase 1 Enemies
     [SerializeField] private GameObject LightEnemy1Phase1;
     [SerializeField] private GameObject LightEnemy2Phase1;
@@ -96,6 +98,7 @@ public class GameManager : MonoBehaviour
             
         }
 
+        Timer += Time.deltaTime;
         
     }
 

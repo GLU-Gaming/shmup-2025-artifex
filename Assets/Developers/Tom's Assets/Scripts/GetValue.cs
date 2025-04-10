@@ -19,6 +19,7 @@ public class GetValue : MonoBehaviour
         int SceneCount = game.SceneCount;
         int SceneCounter = game.SceneCount;
         int BossLiveCount = MainBoss.MainBossLives;
+        float gameTime = game.Timer;
 
         StaticData.valueToKeep = dataToKeep;
         StaticData.HighScoreToKeep = HighScore;
@@ -26,6 +27,7 @@ public class GetValue : MonoBehaviour
         StaticData.SceneCount = SceneCount;
         StaticData.SceneCounter = SceneCounter;
         StaticData.BossLives = BossLiveCount;
+        StaticData.GameTime = gameTime;
 
 
     }
