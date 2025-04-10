@@ -41,14 +41,11 @@ public class EnemySpawner : MonoBehaviour
         if (!other.gameObject.CompareTag("OnderZeeer")) return;
 
         enemySpawner.enabled = false;
-        //Instantiate(LightEnemy, new Vector3(60, 20, 0), Quaternion.Euler(-90, 180, 0));
-       // Instantiate(LightEnemy, new Vector3(70, 0, 0), Quaternion.Euler(-90, 180, 0));
-        //Instantiate(LightEnemy, new Vector3(75, -20, 0), Quaternion.Euler(-90, 180, 0));
-       // Squid2.SetActive(true);
+
 
         for (int i = 0; i < spawnDatas.Length; i++)
         {
-            GameObject enemySpawned = Instantiate(spawnDatas[i].prefab, transform.position + spawnDatas[i].spawnPosition, Quaternion.identity);
+            GameObject enemySpawned = Instantiate(spawnDatas[i].prefab, transform.position + spawnDatas[i].spawnPosition, spawnDatas[i].prefab.transform.rotation);
             mediumEnemy medium = enemySpawned.GetComponent<mediumEnemy>();
             if (medium != null)
             {
