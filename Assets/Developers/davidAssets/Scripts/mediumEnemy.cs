@@ -14,7 +14,7 @@ public class mediumEnemy : MonoBehaviour
     private float IdleTimer = 10;
     private float LockOnTimer = 1;
     private float enemySpeed = 10;
-    [SerializeField] Transform[] targetPositions;
+    public Transform[] targetPositions;
     private int arrayCounter = 0;
     [SerializeField] Transform laserSpawnPoint;
 

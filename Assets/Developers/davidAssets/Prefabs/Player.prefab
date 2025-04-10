@@ -130,8 +130,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 4157569742562892778}
-  horizontalMovementSpeed: 20
-  verticalMovementSpeed: 30
+  horizontalMovementSpeed: 30
+  verticalMovementSpeed: 40
   bulletSpawnPoint: {fileID: 7007110455994145841}
   Bullet: {fileID: 958142880655981368, guid: 86fd707f5c7900e49abeeaa46f768621, type: 3}
   bulletTimer: 0
