@@ -84,7 +84,7 @@ MonoBehaviour:
   rb: {fileID: 0}
   laser: {fileID: 5367704014448742200, guid: 99fa8e22472e32f40b0bce9907fe1acb, type: 3}
   charging: {fileID: 4312010197995711018, guid: b007132ec4c27bc4ab84fc2650732167, type: 3}
-  enemyHealth: 15
+  enemyHealth: 10
   targetPositions:
   - {fileID: 0}
   - {fileID: 0}
