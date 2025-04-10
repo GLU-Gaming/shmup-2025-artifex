@@ -8,6 +8,6 @@ public class StaticData : MonoBehaviour
     public static int HighScoreToKeep;
     public static int SceneCounter;
     public static int SceneCount;
-
+    
 
 }

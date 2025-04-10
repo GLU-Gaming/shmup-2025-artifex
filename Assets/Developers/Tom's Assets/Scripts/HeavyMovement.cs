@@ -153,6 +153,7 @@ public class HeavyMovement : MonoBehaviour
         {
             if (HeavyLives <= 0)
             {
+                Debug.Log("Test");
                 game.AddScore(scoreAmount);
                 game.RemoveBossEnemies(gameObject);
             }

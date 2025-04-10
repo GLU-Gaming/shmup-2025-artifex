@@ -24,6 +24,8 @@ public class playerController : MonoBehaviour
 
     [SerializeField] int LiveAmount = 1;
 
+    [SerializeField] private GameObject Gunturret;
+
     private float InvincibilityFrames = 2;
     void Start()
     {
@@ -69,6 +71,7 @@ public class playerController : MonoBehaviour
         bulletTimer -= Time.deltaTime;
         if (Input.GetKey(KeyCode.Space) == true && bulletTimer < -0.2f)
         {
+            //bulletSpawnPoint.position = new Vector3(bulletSpawnPoint.position.x, Gunturret.transform.position.y, Gunturret.transform.position.z);
             Instantiate(Bullet, bulletSpawnPoint.position, Quaternion.Euler(90, 90, 0));
             bulletTimer = 0.0f;
         }

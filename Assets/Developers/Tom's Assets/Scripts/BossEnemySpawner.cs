@@ -20,6 +20,12 @@ public class BossEnemySpawner : MonoBehaviour
     [SerializeField] private GameObject HeavyEnemy1Phase2;
     [SerializeField] private GameObject HeavyEnemy2Phase2;
 
+    //Phase 3 Enemies
+    
+    [SerializeField] private GameObject HeavyEnemy1Phase3;
+    [SerializeField] private GameObject HeavyEnemy2Phase3;
+    [SerializeField] private GameObject HeavyEnemy3Phase3;
+
     public GameManager game;
     public MainBossMechanics MainBoss;
     public AutoScroll autoscroll;
@@ -34,16 +40,33 @@ public class BossEnemySpawner : MonoBehaviour
 
     void Update()
     {
-       if(MainBoss.MainBossLives == 2)
+       if(game.BossTimer <= 0)
         {
-            if(game.BossEnemies.Count <= 0)
+            if(game.BossEnemies.Count >= 0)
             {
-                LightEnemy1Phase2.gameObject.SetActive(true);
-                LightEnemy2Phase2.gameObject.SetActive(true);
-                MediumEnemy1Phase2.gameObject.SetActive(true);
-                MediumEnemy2Phase2.gameObject.SetActive(true);
-                HeavyEnemy1Phase2.gameObject.SetActive(true);
-                HeavyEnemy2Phase2.gameObject.SetActive(true);
+                if(MainBoss.MainBossLives == 2)
+                {
+                    LightEnemy1Phase2.gameObject.SetActive(true);
+                    LightEnemy2Phase2.gameObject.SetActive(true);
+                    MediumEnemy1Phase2.gameObject.SetActive(true);
+                    MediumEnemy2Phase2.gameObject.SetActive(true);
+                    HeavyEnemy1Phase2.gameObject.SetActive(true);
+                    
+                }
+            }
+        }
+
+        if (game.BossTimer <= 0)
+        {
+            if (game.BossEnemies.Count >= 0)
+            {
+
+                if(MainBoss.MainBossLives == 1)
+                {
+                    HeavyEnemy1Phase3.gameObject.SetActive(true);
+                    HeavyEnemy2Phase3.gameObject.SetActive(true);
+                    HeavyEnemy3Phase3.gameObject.SetActive(true);
+                }
             }
         }
     }

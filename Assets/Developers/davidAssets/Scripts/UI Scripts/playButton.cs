@@ -16,6 +16,7 @@ public class playButton : MonoBehaviour
 
     public SaveHighScore Highscore;
 
+    // [Serializefiedaihd] private string Scene;
     void Start()
     {
         getValue = FindFirstObjectByType<GetValueStart>();
@@ -54,7 +55,7 @@ public class playButton : MonoBehaviour
             SceneManager.LoadScene("mainScene");
         }
         
-        
+        // scenemanager.loadscene(Scene)
     }
 
 }

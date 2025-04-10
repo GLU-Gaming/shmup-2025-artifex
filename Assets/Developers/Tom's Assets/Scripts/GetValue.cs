@@ -16,12 +16,15 @@ public class GetValue : MonoBehaviour
         int score = game.score;
         int HighScore = game.HighScore;
         int SceneCount = game.SceneCount;
+        int SceneCounter = game.SceneCount;
 
         StaticData.valueToKeep = dataToKeep;
         StaticData.HighScoreToKeep = HighScore;
         StaticData.NumberToKeep = score;
         StaticData.SceneCount = SceneCount;
-        
+        StaticData.SceneCounter = SceneCounter;
+
+
     }
 
     private void Start()

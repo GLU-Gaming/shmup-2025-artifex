@@ -6,7 +6,7 @@ using UnityEngine;
 enum LightEnemyState
 {
     Idle,
-    Attack, 
+    Attack,
     Reset
 }
 
@@ -62,7 +62,8 @@ public class LightEnemyMech : MonoBehaviour
         TargetspeedY = TargetspeedIncreaseY;
 
         if (transform.position.y >= 10)
-        { if (AttackCoolDown >= 0)
+        {
+            if (AttackCoolDown >= 0)
             {
                 TargetDownOrUp = false;
             }
@@ -100,28 +101,28 @@ public class LightEnemyMech : MonoBehaviour
         }
         if (AttackCoolDown < 0)
         {
-            if(ReturnTrigger == 0)
+            if (ReturnTrigger == 0)
             {
-                if(State == LightEnemyState.Idle)
+                if (State == LightEnemyState.Idle)
                 {
                     //returnPosition vullen met z'n 
                     PositionReturn = transform.position;
                     State = LightEnemyState.Attack;
                 }
-                
+
 
                 AttackCoolDown = -0.1f;
                 transform.position = new Vector3(transform.position.x - Time.deltaTime * 20, Mathf.Lerp(transform.position.y, Player.transform.position.y, Time.deltaTime * 3), transform.position.z);
             }
         }
 
-        if(ReturnTrigger == 1)
+        if (ReturnTrigger == 1)
         {
             State = LightEnemyState.Reset;
 
             //transform.position = new Vector3(Mathf.Lerp(transform.position.x, ReturnPoint.transform.position.x, Time.deltaTime * 1), Mathf.Lerp(transform.position.y, ReturnPoint.transform.position.y, Time.deltaTime * 1), transform.position.z);
             transform.position = Vector3.Lerp(transform.position, PositionReturn, Time.deltaTime * 2);
-            
+
 
             if (Vector3.Distance(PositionReturn, transform.position) < 0.1f)
             {
@@ -131,14 +132,14 @@ public class LightEnemyMech : MonoBehaviour
             }
         }
 
-        if(LightEnemyLives <= 0)
+        if (LightEnemyLives <= 0)
         {
 
             game.AddScore(scoreAmount);
             Destroy(gameObject);
             Destroy(ReturnPoints);
 
-            
+
         }
 
 
@@ -148,7 +149,7 @@ public class LightEnemyMech : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.tag == "RespawnPoint")
+        if (other.tag == "RespawnPoint")
         {
             ReturnTrigger = 1;
         }
@@ -162,12 +163,12 @@ public class LightEnemyMech : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if(collision.gameObject.tag == "Bullet")
+        if (collision.gameObject.tag == "Bullet")
         {
             LightEnemyLives -= 1;
-            if(MainBoss.MainBossLives <= 3)
+            if (MainBoss.MainBossLives <= 3)
             {
-                if(LightEnemyLives <= 0)
+                if (LightEnemyLives <= 0)
                 {
                     game.AddScore(scoreAmount);
                     game.RemoveBossEnemies(gameObject);
@@ -176,7 +177,7 @@ public class LightEnemyMech : MonoBehaviour
             }
         }
 
-        if(collision.gameObject.tag == "OnderZeeer")
+        if (collision.gameObject.tag == "OnderZeeer")
         {
             LightEnemyLives -= 3;
 
@@ -191,8 +192,8 @@ public class LightEnemyMech : MonoBehaviour
             }
         }
 
-        
-        
-        
+
+
+
     }
 }

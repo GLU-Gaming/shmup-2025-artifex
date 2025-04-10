@@ -37,6 +37,12 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject HeavyEnemy1Phase2;
     [SerializeField] private GameObject HeavyEnemy2Phase2;
 
+    //Phase 3 Enemies
+    
+    [SerializeField] private GameObject HeavyEnemy1Phase3;
+    [SerializeField] private GameObject HeavyEnemy2Phase3;
+    [SerializeField] private GameObject HeavyEnemy3Phase3;
+
 
     //Playership variables
     [SerializeField] public playerController player;
@@ -81,16 +87,6 @@ public class GameManager : MonoBehaviour
             PlayerDeath();
         }
 
-        if (BossEnemies.Count <= 0)
-        {
-            
-            if(MainBoss.MainBossLives == 2)
-            {
-                Debug.Log("test");
-                BossTimer = 0;
-            }
-           
-        }
 
         
         if (BossTimer <= 0) 
@@ -116,7 +112,22 @@ public class GameManager : MonoBehaviour
                 BossEnemies.Add(MediumEnemy1Phase2);
                 BossEnemies.Add(MediumEnemy2Phase2);
                 BossEnemies.Add(HeavyEnemy1Phase2);
-                BossEnemies.Add(HeavyEnemy2Phase2);
+                
+                BossTimer = 1;
+
+            }
+        }
+
+        if (MainBoss.MainBossLives == 1)
+        {
+            if (BossTimer <= 0)
+            {
+
+
+                
+                BossEnemies.Add(HeavyEnemy1Phase3);
+                BossEnemies.Add(HeavyEnemy2Phase3);
+                BossEnemies.Add(HeavyEnemy3Phase3);
                 BossTimer = 1;
 
             }
