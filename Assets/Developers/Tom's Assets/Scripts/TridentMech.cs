@@ -50,7 +50,7 @@ public class TridentMech : MonoBehaviour
             TargetspeedY = TargetspeedIncreaseY;
 
             AttackCoolDown = -0.1f;
-            transform.position = new Vector3(transform.position.x - Time.deltaTime * 20, Mathf.Lerp(transform.position.y, Player.transform.position.y, Time.deltaTime * 3), transform.position.z);
+            transform.position = new Vector3(transform.position.x - Time.deltaTime * 20, Mathf.Lerp(transform.position.y, Player.transform.position.y, Time.deltaTime * 0.5f), transform.position.z);
         }
 
 

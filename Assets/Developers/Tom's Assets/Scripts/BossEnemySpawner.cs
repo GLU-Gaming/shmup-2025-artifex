@@ -18,7 +18,7 @@ public class BossEnemySpawner : MonoBehaviour
     [SerializeField] private GameObject MediumEnemy1Phase2;
     [SerializeField] private GameObject MediumEnemy2Phase2;
     [SerializeField] private GameObject HeavyEnemy1Phase2;
-    [SerializeField] private GameObject HeavyEnemy2Phase2;
+    
 
     //Phase 3 Enemies
     

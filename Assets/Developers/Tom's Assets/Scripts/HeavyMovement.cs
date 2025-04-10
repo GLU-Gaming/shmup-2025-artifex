@@ -4,7 +4,7 @@ public class HeavyMovement : MonoBehaviour
 {
     private Transform Currenttarget;
 
-    private LightEnemyMech[] LightEnemies;
+    public LightEnemyMech[] LightEnemies;
 
     private ForceField forceField;
 
