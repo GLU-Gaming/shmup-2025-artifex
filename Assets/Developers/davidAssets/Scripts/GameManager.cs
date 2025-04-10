@@ -11,7 +11,7 @@ public class GameManager : MonoBehaviour
 
     public int score;
 
-    public int Live = 3;
+    public int Live = 5;
 
     [SerializeField] private TextMeshProUGUI scoreText;
 

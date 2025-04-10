@@ -135,7 +135,7 @@ MonoBehaviour:
   bulletSpawnPoint: {fileID: 7007110455994145841}
   Bullet: {fileID: 958142880655981368, guid: 86fd707f5c7900e49abeeaa46f768621, type: 3}
   bulletTimer: 0
-  playerHealth: 3
+  playerHealth: 5
   Sparks: {fileID: 4312010197995711018, guid: 52c7d504a0604b241a95640111282cee, type: 3}
   hitSoundSfx: {fileID: -1753123994820508588}
   game: {fileID: 0}
