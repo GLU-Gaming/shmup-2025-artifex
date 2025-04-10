@@ -29,7 +29,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 27.8, y: -1.24, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 3, y: 3, z: 3}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4494319494425478642}
@@ -74,6 +74,7 @@ MonoBehaviour:
   HeavyBullet: {fileID: 8745797883000422955, guid: 43c3fb616ddba8a41b4869880a92b6a9, type: 3}
   scoreAmount: 100
   game: {fileID: 0}
+  MainBoss: {fileID: 0}
 --- !u!54 &6396536092280154365
 Rigidbody:
   m_ObjectHideFlags: 0

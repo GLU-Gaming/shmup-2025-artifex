@@ -60,7 +60,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 48.04, y: 4.71181, z: -14.820149}
-  m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 9041230402086385681}
@@ -89,6 +89,8 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   laserSpawnPoint: {fileID: 2604375159915495874}
+  game: {fileID: 0}
+  MainBoss: {fileID: 0}
 --- !u!54 &8391002249060558408
 Rigidbody:
   m_ObjectHideFlags: 0
